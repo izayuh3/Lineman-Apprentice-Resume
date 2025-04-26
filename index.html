@@ -494,13 +494,14 @@
         </div>
     </footer>
 
-    <script>
-        // Simple form submission handler
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
+   <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Optionally, you could send data to Formspree here with JavaScript
+        window.location.href = 'thank-you.html';
+    });
+</script>
+
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
