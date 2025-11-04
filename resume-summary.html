@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Isaiah Latta — 1-Page Resume Summary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Simple, print-friendly CSS (no framework needed) -->
+  <style>
+    :root{
+      --text:#111827; --muted:#4b5563; --light:#6b7280; --blue:#1e3a8a;
+      --border:#e5e7eb;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue","Noto Sans",Arial,"Apple Color Emoji","Segoe UI Emoji";line-height:1.35}
+    .page{max-width:8.5in;margin:0 auto;padding:0.6in;background:#fff}
+    header{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--border);padding-bottom:12px;margin-bottom:12px}
+    .name{font-size:28px;font-weight:800;color:var(--blue)}
+    .title{font-size:16px;font-weight:600;margin-top:2px}
+    .contact{font-size:12px;color:var(--muted);text-align:right}
+    .section{margin:14px 0}
+    .section h2{font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--blue);margin:0 0 6px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .item h3{font-size:13px;margin:0 0 3px}
+    .item .meta{font-size:12px;color:var(--light);margin-bottom:4px}
+    ul{margin:6px 0 0 18px;padding:0}
+    li{margin:3px 0}
+    .pill{display:inline-block;font-size:11px;border:1px solid var(--border);padding:2px 8px;border-radius:999px;margin:2px 4px 0 0}
+    .btn{display:inline-block;margin:8px 0 0 auto;padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:12px;background:#f9fafb}
+    @media print{
+      .btn{display:none}
+      .page{padding:.5in}
+      a{color:inherit;text-decoration:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div>
+        <div class="name">Isaiah Latta</div>
+        <div class="title">Aspiring Lineman Apprentice</div>
+      </div>
+      <div class="contact">
+        San Clemente, CA<br>
+        <a href="tel:9495477464">(949) 547-7464</a> · <a href="mailto:isaiahlatta@hotmail.com">isaiahlatta@hotmail.com</a><br>
+        CDL Class A (Tanker, Triples/Doubles)
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="section">
+      <h2>Professional Summary</h2>
+      <p style="margin:0">
+        Graduate of American Lineman College with 5 years of rigging/at-height experience and current field work as a
+        <strong>Groundman at Crux Subsurfacing</strong> (Crescent City, CA). Supporting geotechnical <strong>core-sample drilling</strong> while
+        working <strong>7/12s (84 hrs/week)</strong>—demonstrating reliability, stamina, and a safety-first mindset. OSHA-10, Flagger, First Aid/CPR,
+        Climbing certified; Class A CDL with tanker and triples/doubles endorsements.
+      </p>
+    </section>
+
+    <!-- Experience -->
+    <section class="section">
+      <h2>Experience</h2>
+
+      <div class="item">
+        <h3>Groundman — Crux Subsurfacing</h3>
+        <div class="meta">Crescent City, CA · Sep 5, 2025 – Present · Schedule: 7/12s</div>
+        <ul>
+          <li>Support geotechnical drilling for core samples; assist around heavy drilling machinery and site logistics.</li>
+          <li>Maintain safe, organized work areas; execute setup/teardown under tight timelines.</li>
+          <li>Coordinate closely with crew to meet production and safety targets in adverse conditions.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Professional Stagehand</h3>
+        <div class="meta">2020 – 2025</div>
+        <ul>
+          <li>Rigging, work at height, and heavy lifting; frequent team coordination under strict deadlines.</li>
+          <li>Occasional leadership of small crews; emphasis on hazard assessment and communication.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>American Lineman College — Graduate</h3>
+        <div class="meta">Bakersfield, CA · 2025</div>
+        <ul>
+          <li>Pole climbing, transformer installation, underground systems, electrical theory, and safe work practices.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>CDL Training & Certification</h3>
+        <div class="meta">2024</div>
+        <ul>
+          <li>Class A CDL with tanker and triples/doubles endorsements; vehicle operation and DOT safety compliance.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Certifications & Skills -->
+    <section class="section">
+      <h2>Certifications & Skills</h2>
+      <div class="grid">
+        <div>
+          <div class="pill">OSHA-10</div>
+          <div class="pill">Flagger</div>
+          <div class="pill">First Aid/CPR</div>
+          <div class="pill">Climbing Certified</div>
+          <div class="pill">CDL Class A (T, T/D)</div>
+        </div>
+        <div>
+          <div class="pill">Work at Heights</div>
+          <div class="pill">Rigging</div>
+          <div class="pill">Crew Coordination</div>
+          <div class="pill">Safety Compliance</div>
+          <div class="pill">Equipment Handling</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2>Education</h2>
+      <div class="item">
+        <h3>American Lineman College — Graduate</h3>
+        <div class="meta">Bakersfield, CA · 2025</div>
+      </div>
+    </section>
+
+    <!-- Print button (hidden when printing) -->
+    <div style="display:flex;justify-content:flex-end">
+      <button class="btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print PDF</button>
+    </div>
+  </div>
+
+  <!-- Optional icon support for screen (safe to ignore when printing) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
+</body>
+</html>
