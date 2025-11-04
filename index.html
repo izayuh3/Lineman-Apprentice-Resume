@@ -6,7 +6,6 @@
   <title>Isaiah Latta | Aspiring Lineman Apprentice</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     .hero-gradient{background:linear-gradient(135deg,#1e3a8a 0%,#0ea5e9 100%)}
     .skill-card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,.1)}
@@ -16,8 +15,6 @@
     .reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
     .reveal.show{opacity:1;transform:none}
     .modal-bg{background:rgba(0,0,0,.85)}
-    .logo-gray{filter:grayscale(100%);opacity:.85;transition:filter .3s,opacity .3s,transform .3s}
-    .logo-gray:hover{filter:none;opacity:1;transform:translateY(-2px)}
   </style>
 </head>
 <body class="font-sans bg-gray-50 text-gray-800">
@@ -32,7 +29,6 @@
         <a href="#about" class="hover:text-blue-600 transition">About</a>
         <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
         <a href="#experience" class="hover:text-blue-600 transition">Experience</a>
-        <a href="#metrics" class="hover:text-blue-600 transition">Metrics</a>
         <a href="#gallery" class="hover:text-blue-600 transition">Gallery</a>
         <a href="#certifications" class="hover:text-blue-600 transition">Certifications</a>
         <a href="#why-me" class="hover:text-blue-600 transition">Why Hire Me</a>
@@ -56,7 +52,7 @@
         <div class="flex flex-wrap gap-4">
           <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Contact Me</a>
           <a href="#certifications" class="border-2 border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition">View Certifications</a>
-          <a href="#metrics" class="bg-white/10 border border-white/20 px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition">See My Impact</a>
+          <a href="resume-summary.html" class="bg-white/10 border border-white/20 px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition"><i class="fas fa-file-pdf mr-2"></i> 1-Page PDF</a>
         </div>
       </div>
       <div class="md:w-1/2 flex justify-center">
@@ -179,95 +175,51 @@
     </div>
   </section>
 
-  <!-- Metrics & Impact -->
-  <section id="metrics" class="py-16 bg-gray-100">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-12">Metrics & Impact</h2>
-
-      <!-- Counters -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 reveal">
-        <div class="bg-white rounded-xl shadow p-6 text-center">
-          <div class="text-4xl font-extrabold" data-count="36">0</div>
-          <div class="mt-2 text-gray-600">Projects Supported</div>
-        </div>
-        <div class="bg-white rounded-xl shadow p-6 text-center">
-          <div class="text-4xl font-extrabold" data-count="280">0</div>
-          <div class="mt-2 text-gray-600">Poles Climbed / Up</div>
-        </div>
-        <div class="bg-white rounded-xl shadow p-6 text-center">
-          <div class="text-4xl font-extrabold" data-count="18500">0</div>
-          <div class="mt-2 text-gray-600">CDL Miles</div>
-        </div>
-        <div class="bg-white rounded-xl shadow p-6 text-center">
-          <div class="text-4xl font-extrabold" data-count="120">0</div>
-          <div class="mt-2 text-gray-600">Safety Training Hours</div>
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Doughnut -->
-        <div class="bg-white rounded-xl shadow p-6 reveal">
-          <h3 class="text-xl font-semibold mb-4">Safety & Training Mix</h3>
-          <canvas id="safetyChart" height="220" aria-label="Safety Doughnut Chart"></canvas>
-          <p class="text-sm text-gray-500 mt-4">OSHA-10, First Aid/CPR, Flagger, and Climbing certifications emphasized in my ongoing training plan.</p>
-        </div>
-
-        <!-- Bar -->
-        <div class="bg-white rounded-xl shadow p-6 reveal">
-          <h3 class="text-xl font-semibold mb-4">Recent Work Hours (Last 8 Weeks)</h3>
-          <canvas id="hoursChart" height="220" aria-label="Recent Hours Bar Chart"></canvas>
-          <p class="text-sm text-gray-500 mt-4">Hours across drilling support, CDL driving, field safety, and gear maintenance.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- THEMED Photo Gallery -->
-  <section id="gallery" class="py-16 bg-white">
+  <!-- THEMED Photo Gallery (expanded) -->
+  <section id="gallery" class="py-20 bg-gradient-to-b from-white via-gray-50 to-white">
     <div class="container mx-auto px-6">
       <h2 class="text-3xl font-bold text-center mb-12">Photo Gallery</h2>
 
-    <!-- Theme: Crux Subsurfacing Night Work -->
-<h3 class="text-xl font-semibold mb-4 reveal">Crux Subsurfacing — Night Work</h3>
-<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 reveal">
-  <figure class="rounded-lg overflow-hidden shadow">
-    <img src="images/crux-night-yard.png" alt="Night drilling yard from operator cab with lights and heavy equipment" class="gallery-img w-full h-full object-cover" loading="lazy" />
-    <figcaption class="px-3 py-2 text-sm text-gray-600">Operating at night from the cab — high visibility and heavy equipment coordination.</figcaption>
-  </figure>
-  <figure class="rounded-lg overflow-hidden shadow">
-    <img src="images/crux-night-drill1.jpg" alt="Crew monitoring geotechnical drill with hydraulic hoses and lights at night" class="gallery-img w-full h-full object-cover" loading="lazy" />
-    <figcaption class="px-3 py-2 text-sm text-gray-600">Crew working under lights during active core drilling operations — Crux Subsurfacing, Crescent City, CA.</figcaption>
-  </figure>
-  <figure class="rounded-lg overflow-hidden shadow">
-    <img src="images/crux-night-drill2.jpg" alt="Night drill rig platform surrounded by cables, generator, and hydraulic lines" class="gallery-img w-full h-full object-cover" loading="lazy" />
-    <figcaption class="px-3 py-2 text-sm text-gray-600">Full drill rig setup on night shift — managing hydraulics, pressure lines, and site power safely.</figcaption>
-  </figure>
-</div>
-
+      <!-- Theme: Crux Subsurfacing Night Work -->
+      <h3 class="text-xl font-semibold mb-4 reveal">Crux Subsurfacing — Night Work</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 reveal">
+        <figure class="rounded-lg overflow-hidden shadow">
+          <img src="images/crux-night-yard.png" alt="Night drilling yard from operator cab with lights and heavy equipment" class="gallery-img w-full h-full object-cover" loading="lazy" />
+          <figcaption class="px-3 py-2 text-sm text-gray-600">From the cab — coordinating heavy equipment on nights.</figcaption>
+        </figure>
+        <figure class="rounded-lg overflow-hidden shadow">
+          <img src="images/crux-night-drill1.jpg" alt="Crew monitoring geotechnical drill with hydraulic hoses and lights at night" class="gallery-img w-full h-full object-cover" loading="lazy" />
+          <figcaption class="px-3 py-2 text-sm text-gray-600">Live core-sample drilling — crew coordination and site safety.</figcaption>
+        </figure>
+        <figure class="rounded-lg overflow-hidden shadow">
+          <img src="images/crux-night-drill2.jpg" alt="Night drill rig platform surrounded by cables, generator, and hydraulic lines" class="gallery-img w-full h-full object-cover" loading="lazy" />
+          <figcaption class="px-3 py-2 text-sm text-gray-600">Rig platform, lines, and power — organized and controlled.</figcaption>
+        </figure>
+      </div>
 
       <!-- Theme: Bucket/Crane Ops -->
       <h3 class="text-xl font-semibold mb-4 reveal">Bucket & Crane Operations</h3>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 reveal">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 reveal">
         <figure class="rounded-lg overflow-hidden shadow">
-          <img src="Images/crane-ops.png" alt="Operating a crane truck with outriggers deployed at the training yard" class="gallery-img w-full h-full object-cover" loading="lazy" />
-          <figcaption class="px-3 py-2 text-sm text-gray-600">Crane operations — rigging, hand signals, and safe lifting</figcaption>
+          <img src="images/crane-ops.png" alt="Operating a crane truck with outriggers deployed at the training yard" class="gallery-img w-full h-full object-cover" loading="lazy" />
+          <figcaption class="px-3 py-2 text-sm text-gray-600">Crane operations — rigging, hand signals, safe lifting.</figcaption>
         </figure>
         <figure class="rounded-lg overflow-hidden shadow">
-          <img src="Images/bucket-inspection.png" alt="Inspecting and operating an Altec bucket truck" class="gallery-img w-full h-full object-cover" loading="lazy" />
-          <figcaption class="px-3 py-2 text-sm text-gray-600">Bucket truck inspection & operation — pre-use checks</figcaption>
+          <img src="images/bucket-inspection.png" alt="Inspecting and operating an Altec bucket truck" class="gallery-img w-full h-full object-cover" loading="lazy" />
+          <figcaption class="px-3 py-2 text-sm text-gray-600">Bucket truck inspection & operation — pre-use checks.</figcaption>
         </figure>
       </div>
 
       <!-- Theme: Climbing & Pole Work -->
       <h3 class="text-xl font-semibold mb-4 reveal">Climbing & Pole Work</h3>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 reveal">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 reveal">
         <figure class="rounded-lg overflow-hidden shadow">
-          <img src="Images/training-yard-poles.png" alt="Multiple trainees on poles and a bucket truck in the training yard" class="gallery-img w-full h-full object-cover" loading="lazy" />
-          <figcaption class="px-3 py-2 text-sm text-gray-600">Crossarm work and bucket coordination at the yard</figcaption>
+          <img src="images/training-yard-poles.png" alt="Multiple trainees on poles and a bucket truck in the training yard" class="gallery-img w-full h-full object-cover" loading="lazy" />
+          <figcaption class="px-3 py-2 text-sm text-gray-600">Crossarm work and bucket coordination at the yard.</figcaption>
         </figure>
         <figure class="rounded-lg overflow-hidden shadow">
-          <img src="Images/pole-high-silhouette.png" alt="Silhouette climbing high on a single utility pole" class="gallery-img w-full h-full object-cover" loading="lazy" />
-          <figcaption class="px-3 py-2 text-sm text-gray-600">Solo climb — focus on positioning and fall protection</figcaption>
+          <img src="images/pole-high-silhouette.png" alt="Silhouette climbing high on a single utility pole" class="gallery-img w-full h-full object-cover" loading="lazy" />
+          <figcaption class="px-3 py-2 text-sm text-gray-600">Solo climb — focus on positioning and fall protection.</figcaption>
         </figure>
       </div>
 
@@ -275,8 +227,8 @@
       <h3 class="text-xl font-semibold mb-4 reveal">Electrical Concepts & Lab</h3>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
         <figure class="rounded-lg overflow-hidden shadow">
-          <img src="Images/line-model-lab.png" alt="Table-top distribution line model with insulators and conductors" class="gallery-img w-full h-full object-cover" loading="lazy" />
-          <figcaption class="px-3 py-2 text-sm text-gray-600">Table-top distribution model — circuits, insulators, & clearances</figcaption>
+          <img src="images/line-model-lab.png" alt="Table-top distribution line model with insulators and conductors" class="gallery-img w-full h-full object-cover" loading="lazy" />
+          <figcaption class="px-3 py-2 text-sm text-gray-600">Table-top distribution model — circuits & clearances.</figcaption>
         </figure>
       </div>
     </div>
@@ -287,21 +239,6 @@
         <button id="modalClose" class="absolute -top-10 right-0 text-white text-2xl" aria-label="Close">&times;</button>
         <img id="modalImg" src="" alt="Preview" class="w-full rounded-lg shadow-2xl"/>
         <div id="modalCaption" class="text-white/90 mt-3 text-sm"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tools & Equipment -->
-  <section class="py-12 bg-gray-100">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-10">Tools & Equipment Familiarity</h2>
-      <div class="grid grid-cols-2 md:grid-cols-6 gap-8 items-center justify-items-center reveal">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Makita_Logo.svg" class="h-10 logo-gray" alt="Makita"/>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/DeWalt_Logo.svg" class="h-10 logo-gray" alt="DeWalt"/>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Milwaukee_Tool_logo.svg" class="h-8 logo-gray" alt="Milwaukee"/>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Bosch-logo.svg" class="h-8 logo-gray" alt="Bosch"/>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Hilti_Logo.svg" class="h-6 logo-gray" alt="Hilti"/>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Husqvarna_logo.svg" class="h-10 logo-gray" alt="Husqvarna"/>
       </div>
     </div>
   </section>
@@ -527,47 +464,6 @@
       })
     },{threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-    // Counters
-    const counterObserver=new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(!entry.isIntersecting) return;
-        const el=entry.target; const end=parseInt(el.dataset.count,10)||0;
-        let curr=0; const step=Math.max(1,Math.floor(end/100));
-        const inc=()=>{curr+=step;if(curr>=end){curr=end} el.textContent=curr.toLocaleString(); if(curr<end) requestAnimationFrame(inc)}
-        inc(); counterObserver.unobserve(el);
-      })
-    },{threshold:.5});
-    document.querySelectorAll('[data-count]').forEach(el=>counterObserver.observe(el));
-
-    // Charts
-    const donutCtx=document.getElementById('safetyChart');
-    if(donutCtx){
-      new Chart(donutCtx,{
-        type:'doughnut',
-        data:{labels:['OSHA-10','First Aid/CPR','Flagger','Climbing'],
-          datasets:[{data:[30,25,20,25]}]},
-        options:{plugins:{legend:{position:'bottom'}},cutout:'60%'}
-      });
-    }
-    const barCtx=document.getElementById('hoursChart');
-    if(barCtx){
-      new Chart(barCtx,{
-        type:'bar',
-        data:{labels:['Wk1','Wk2','Wk3','Wk4','Wk5','Wk6','Wk7','Wk8'],
-          datasets:[
-            {label:'Drilling Support',data:[20,18,24,22,26,24,25,23]},
-            {label:'CDL/Transport',data:[10,8,9,11,10,12,9,10]},
-            {label:'Field Safety',data:[4,5,4,5,6,5,6,5]},
-            {label:'Gear Maintenance',data:[3,3,4,3,4,4,3,4]},
-          ]},
-        options:{
-          responsive:true,
-          plugins:{legend:{position:'bottom'}},
-          scales:{y:{beginAtZero:true}}
-        }
-      });
-    }
 
     // Simple gallery modal with caption
     const modal=document.getElementById('galleryModal');
