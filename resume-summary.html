@@ -1,170 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isaiah Latta | Lineman Apprentice</title>
-<script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-        .page {
-            width: 210mm;
-            min-height: 297mm;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .header-gradient {
-            background: linear-gradient(135deg, #1e3a8a 0%, #0ea5e9 100%);
-        }
-        .skill-pill {
-            display: inline-block;
-            background: #e5e7eb;
-            border-radius: 9999px;
-            padding: 0.25rem 0.75rem;
-            margin: 0.25rem;
-            font-size: 0.75rem;
-        }
-        .timeline-dot {
-            position: absolute;
-            left: -1.5rem;
-            top: 0.25rem;
-            width: 0.75rem;
-            height: 0.75rem;
-            border-radius: 9999px;
-            background: #3b82f6;
-        }
-        @media print {
-            .page {
-                box-shadow: none;
-            }
-            .no-print {
-                display: none !important;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Isaiah Latta | 1-Page Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --blue:#1e3a8a; --brand:#0ea5e9; }
+    *{ box-sizing:border-box }
+    body{ font-family:Roboto,system-ui,Segoe UI,Arial; background:#f3f4f6; }
+    .page{
+      width:210mm; min-height:297mm; margin:0 auto; background:#fff;
+      box-shadow:0 0 10px rgba(0,0,0,.08); padding:14mm;
+    }
+    .header-gradient{ background:linear-gradient(135deg,var(--blue) 0%,var(--brand) 100%); }
+    .skill-pill{ display:inline-block; background:#e5e7eb; border-radius:9999px; padding:.15rem .55rem; margin:.15rem; font-size:.75rem; }
+    .timeline-dot{ position:absolute; left:-1.05rem; top:.35rem; width:.6rem; height:.6rem; border-radius:9999px; background:#3b82f6; }
+    h1,h2,h3{ line-height:1.2 }
+    h2{ font-size:1.05rem }
+    .tight p, .tight li{ margin:.15rem 0 }
+    .tight ul{ margin:.25rem 0 0 .95rem }
+    @page{ size:A4; margin:10mm }
+    @media print{
+      body{ background:#fff }
+      .page{ box-shadow:none; width:auto; min-height:auto; padding:0; }
+      .no-print{ display:none !important }
+      /* scale slightly to guarantee 1 page in Chrome/Edge */
+      html{ zoom:0.94; } /* adjust to 0.92 if you still see a second page */
+    }
+  </style>
 </head>
-<body class="bg-gray-100 p-4 md:p-8 print:p-0">
-    <custom-navbar></custom-navbar>
-<main class="page p-8 print:p-8">
-<!-- Header -->
-        <div class="header-gradient text-white p-6 rounded-lg mb-6">
-            <div class="flex justify-between items-start">
-                <div>
-                    <h1 class="text-3xl font-bold">Isaiah Latta</h1>
-                    <p class="text-xl opacity-90">Lineman Apprentice</p>
-                    <p class="text-sm mt-2 opacity-80">
-                        <i data-feather="globe" class="mr-2 w-4 h-4 inline"></i>
-                        <a href="https://Izayuh3.github.io/Lineman-Apprentice-Resume/" target="_blank" class="hover:underline">Izayuh3.github.io/Lineman-Apprentice-Resume/</a>
-                    </p>
-</main>
-<div class="text-right">
-                    <p class="flex items-center justify-end"><i data-feather="phone" class="mr-2 w-4 h-4"></i> (949) 547-7464</p>
-                    <p class="flex items-center justify-end"><i data-feather="mail" class="mr-2 w-4 h-4"></i> Isaiahlatta@hotmail.com</p>
-                    <p class="flex items-center justify-end"><i data-feather="map-pin" class="mr-2 w-4 h-4"></i> San Clemente, CA</p>
-                </div>
-            </div>
-        </div>
+<body class="p-4 md:p-8 print:p-0">
 
-        <!-- Summary -->
-        <div class="mb-6">
-            <h2 class="text-xl font-bold border-b-2 border-blue-500 pb-1 mb-3">Professional Summary</h2>
-            <p class="text-gray-700">
-                Graduate of American Lineman College with Class A CDL (tanker and triples/doubles endorsements) and OSHA-10 certification. 
-                Currently working as a Groundman at Crux Subsurfacing (7/12s schedule), bringing 5 years of professional stagehand experience 
-                with rigging and height work. Committed to safety and eager to begin career as a lineman apprentice.
-            </p>
-        </div>
+  <!-- ONE PAGE WRAPPER START -->
+  <main class="page">
 
-        <!-- Skills -->
-        <div class="mb-6">
-            <h2 class="text-xl font-bold border-b-2 border-blue-500 pb-1 mb-3">Key Skills</h2>
-            <div class="flex flex-wrap">
-                <span class="skill-pill">Class A CDL (Tanker & Triples/Doubles)</span>
-                <span class="skill-pill">Pole Climbing</span>
-                <span class="skill-pill">Rigging</span>
-                <span class="skill-pill">OSHA-10 Certified</span>
-                <span class="skill-pill">First Aid/CPR</span>
-                <span class="skill-pill">Flagger Certified</span>
-                <span class="skill-pill">Bucket Truck Operation</span>
-                <span class="skill-pill">Heavy Equipment</span>
-                <span class="skill-pill">Team Coordination</span>
-                <span class="skill-pill">Electrical Theory</span>
-            </div>
+    <!-- Header -->
+    <section class="header-gradient text-white rounded-lg mb-4 p-5">
+      <div class="flex justify-between items-start">
+        <div class="mr-4">
+          <h1 class="text-3xl font-extrabold">Isaiah Latta</h1>
+          <p class="text-lg opacity-95 -mt-1">Lineman Apprentice</p>
+          <p class="text-sm mt-1 opacity-90">
+            <i data-feather="globe" class="inline w-4 h-4 mr-1"></i>
+            <a class="hover:underline text-white" target="_blank" href="https://Izayuh3.github.io/Lineman-Apprentice-Resume/">Izayuh3.github.io/Lineman-Apprentice-Resume/</a>
+          </p>
         </div>
+        <div class="text-right text-sm leading-5">
+          <p class="flex items-center justify-end"><i data-feather="phone" class="w-4 h-4 mr-2"></i> (949) 547-7464</p>
+          <p class="flex items-center justify-end"><i data-feather="mail" class="w-4 h-4 mr-2"></i> Isaiahlatta@hotmail.com</p>
+          <p class="flex items-center justify-end"><i data-feather="map-pin" class="w-4 h-4 mr-2"></i> San Clemente, CA</p>
+        </div>
+      </div>
+    </section>
 
-        <!-- Experience -->
-        <div class="mb-6">
-            <h2 class="text-xl font-bold border-b-2 border-blue-500 pb-1 mb-3">Professional Experience</h2>
-            
-            <div class="relative pl-6 mb-4">
-                <div class="timeline-dot"></div>
-                <h3 class="font-bold">Groundman | Crux Subsurfacing</h3>
-                <p class="text-gray-600 text-sm">Crescent City, CA | Sep 2025 - Present</p>
-                <ul class="list-disc pl-5 mt-1 text-gray-700 text-sm">
-                    <li>Work 7/12s schedule (84 hours/week) demonstrating reliability and stamina</li>
-                    <li>Assist with heavy drilling machinery and maintain safe worksite conditions</li>
-                    <li>Coordinate with crew to meet production and safety targets</li>
-                </ul>
-            </div>
-            
-            <div class="relative pl-6 mb-4">
-                <div class="timeline-dot"></div>
-                <h3 class="font-bold">Professional Stagehand</h3>
-                <p class="text-gray-600 text-sm">2020 - 2025</p>
-                <ul class="list-disc pl-5 mt-1 text-gray-700 text-sm">
-                    <li>5 years experience with light rigging and working at heights</li>
-                    <li>Set up and operated rigging systems for events</li>
-                    <li>Worked under tight deadlines with crew coordination</li>
-                </ul>
-            </div>
-        </div>
+    <!-- Summary -->
+    <section class="mb-3 tight">
+      <h2 class="font-bold border-b-2 border-blue-500 pb-1 mb-2">Professional Summary</h2>
+      <p class="text-gray-800 text-[0.95rem]">
+        Graduate of American Lineman College with Class A CDL (tanker & triples/doubles) and OSHA-10. Currently a
+        <strong>Groundman at Crux Subsurfacing</strong> in Crescent City, CA—working <strong>7/12s (84 hrs/week)</strong> on geotechnical
+        core-sample drilling. Five years of professional stagehand/rigging experience and proven safety-first, team-focused work ethic.
+      </p>
+    </section>
 
-        <!-- Education & Certifications -->
-        <div class="mb-6">
-            <h2 class="text-xl font-bold border-b-2 border-blue-500 pb-1 mb-3">Education & Certifications</h2>
-            
-            <div class="relative pl-6 mb-4">
-                <div class="timeline-dot"></div>
-                <h3 class="font-bold">American Lineman College</h3>
-                <p class="text-gray-600 text-sm">Bakersfield, CA | 2025</p>
-                <p class="text-gray-700 text-sm">Comprehensive training in pole climbing, transformer installation, underground systems, and electrical theory</p>
-            </div>
-            
-            <div class="relative pl-6">
-                <div class="timeline-dot"></div>
-                <h3 class="font-bold">Licenses & Certifications</h3>
-                <ul class="list-disc pl-5 mt-1 text-gray-700 text-sm">
-                    <li>Class A CDL with Tanker & Triples/Doubles Endorsements</li>
-                    <li>OSHA-10 Construction Safety Certified</li>
-                    <li>Flagger Certification</li>
-                    <li>First Aid & CPR Certified</li>
-                    <li>Climbing Certification</li>
-                </ul>
-            </div>
-        </div>
+    <!-- Skills -->
+    <section class="mb-3">
+      <h2 class="font-bold border-b-2 border-blue-500 pb-1 mb-2">Key Skills</h2>
+      <div class="flex flex-wrap text-gray-900">
+        <span class="skill-pill">Class A CDL (Tanker & Triples/Doubles)</span>
+        <span class="skill-pill">Pole Climbing</span>
+        <span class="skill-pill">Rigging</span>
+        <span class="skill-pill">OSHA-10</span>
+        <span class="skill-pill">First Aid/CPR</span>
+        <span class="skill-pill">Flagger Certified</span>
+        <span class="skill-pill">Bucket Truck Basics</span>
+        <span class="skill-pill">Heavy Equipment</span>
+        <span class="skill-pill">Crew Coordination</span>
+        <span class="skill-pill">Electrical Theory</span>
+      </div>
+    </section>
 
-        <!-- Why Hire Me -->
-        <div>
-            <h2 class="text-xl font-bold border-b-2 border-blue-500 pb-1 mb-3">Why Hire Me?</h2>
-            <ul class="list-disc pl-5 text-gray-700 text-sm">
-                <li>Unique combination of formal lineman training and 5 years rigging experience</li>
-                <li>CDL ready to drive and deploy equipment from day one</li>
-                <li>Comprehensive safety training with OSHA-10, First Aid/CPR, and Flagger certifications</li>
-                <li>Proven work ethic with current 84-hour work weeks</li>
-                <li>Comfortable working at heights with climbing certification</li>
-            </ul>
-        </div>
-</div>
-    <custom-footer></custom-footer>
-    <script src="components/navbar.js"></script>
-    <script src="components/footer.js"></script>
-    <script>
-        feather.replace();
-    </script>
+    <!-- Experience -->
+    <section class="mb-3">
+      <h2 class="font-bold border-b-2 border-blue-500 pb-1 mb-2">Professional Experience</h2>
+
+      <div class="relative pl-5 mb-2 tight">
+        <div class="timeline-dot"></div>
+        <h3 class="font-bold">Groundman — Crux Subsurfacing</h3>
+        <p class="text-gray-600 text-sm">Crescent City, CA · Sep 2025 – Present</p>
+        <ul class="list-disc text-[0.95rem]">
+          <li>7/12s schedule (84 hrs/week) in demanding field conditions (nights, terrain, weather).</li>
+          <li>Assist around heavy drilling machinery; maintain organized, safe work zones.</li>
+          <li>Coordinate with crew to meet production and safety targets for core-sample drilling.</li>
+        </ul>
+      </div>
+
+      <div class="relative pl-5 mb-2 tight">
+        <div class="timeline-dot"></div>
+        <h3 class="font-bold">Professional Stagehand / Rigger</h3>
+        <p class="text-gray-600 text-sm">2020 – 2025</p>
+        <ul class="list-disc text-[0.95rem]">
+          <li>Light rigging and 60+ ft work at height; forklifts & lifts for large productions.</li>
+          <li>Coordinated builds with crews of 5–20 under tight deadlines; zero recordables.</li>
+          <li>Trained new crew on equipment handling, hazard assessment, and comms.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section class="mb-3">
+      <h2 class="font-bold border-b-2 border-blue-500 pb-1 mb-2">Education & Certifications</h2>
+
+      <div class="relative pl-5 mb-2 tight">
+        <div class="timeline-dot"></div>
+        <h3 class="font-bold">American Lineman College — Graduate</h3>
+        <p class="text-gray-600 text-sm">Bakersfield, CA · 2025</p>
+        <p class="text-[0.95rem]">Pole climbing, transformer installation, underground systems, hot-stick basics, and safety protocols.</p>
+      </div>
+
+      <div class="relative pl-5 tight">
+        <div class="timeline-dot"></div>
+        <h3 class="font-bold">Licenses & Certs</h3>
+        <ul class="list-disc text-[0.95rem]">
+          <li>Class A CDL (Tanker & Triples/Doubles)</li>
+          <li>OSHA-10 Construction Safety</li>
+          <li>Flagger Certification</li>
+          <li>First Aid & CPR</li>
+          <li>Climbing Certification</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Why Hire Me -->
+    <section class="mb-1 tight">
+      <h2 class="font-bold border-b-2 border-blue-500 pb-1 mb-2">Why Hire Me?</h2>
+      <ul class="list-disc ml-5 text-[0.95rem]">
+        <li>Formal lineman training + 5 years rigging = fast ramp-up & safe at-height work.</li>
+        <li>CDL ready to drive and deploy equipment on day one.</li>
+        <li>OSHA-10, First Aid/CPR, Flagger; safety-first mindset proven on site.</li>
+        <li>Current 84-hour weeks show reliability, stamina, and commitment.</li>
+      </ul>
+    </section>
+
+  </main>
+  <!-- ONE PAGE WRAPPER END -->
+
+  <script>feather.replace();</script>
 </body>
 </html>
