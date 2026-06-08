@@ -3,92 +3,177 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Isaiah Latta | Aspiring Lineman Apprentice</title>
+  <title>Isaiah Latta | Lineman Apprentice — Available Now</title>
+  <meta name="description" content="Isaiah Latta — American Lineman College graduate, CDL Class A, OSHA-10. Available immediately and actively seeking a lineman apprenticeship."/>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter','ui-sans-serif','system-ui','sans-serif'],
+            display: ['Oswald','Inter','sans-serif'],
+          },
+          colors: {
+            ink: '#0b1220',
+            steel: '#111827',
+            volt: '#f59e0b',
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    .hero-gradient{background:linear-gradient(135deg,#1e3a8a 0%,#0ea5e9 100%)}
-    .skill-card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,.1)}
-    .timeline-item:not(:last-child)::after{content:'';position:absolute;left:24px;top:32px;height:calc(100% - 32px);width:2px;background:#e5e7eb}
-    .cert-badge{animation:pulse 2s infinite}
-    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
-    .reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif}
+    .font-display{font-family:'Oswald',sans-serif;letter-spacing:.01em}
+    .topbar{background:linear-gradient(90deg,#f59e0b 0%,#fbbf24 50%,#f59e0b 100%)}
+    .hero-bg{
+      background:
+        linear-gradient(180deg,rgba(11,18,32,.72) 0%,rgba(11,18,32,.82) 55%,rgba(11,18,32,.96) 100%),
+        radial-gradient(120% 120% at 80% 0%,rgba(245,158,11,.18) 0%,rgba(11,18,32,0) 60%),
+        #0b1220;
+      background-size:cover; background-position:center;
+    }
+    .eyebrow{letter-spacing:.22em;text-transform:uppercase;font-weight:700;font-size:.72rem}
+    .accent-underline::after{content:'';display:block;width:64px;height:4px;border-radius:9px;background:#f59e0b;margin-top:14px}
+    .accent-underline.center::after{margin-left:auto;margin-right:auto}
+    .skill-card{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+    .skill-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,.18);border-color:#f59e0b}
+    .timeline-item:not(:last-child)::after{content:'';position:absolute;left:23px;top:46px;height:calc(100% - 30px);width:2px;background:linear-gradient(#f59e0b,rgba(245,158,11,.15))}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
     .reveal.show{opacity:1;transform:none}
-    .modal-bg{background:rgba(0,0,0,.85)}
+    .modal-bg{background:rgba(5,8,15,.92)}
+    .gallery-img{transition:transform .4s ease}
+    figure:hover .gallery-img{transform:scale(1.06)}
+    .pulse-dot{box-shadow:0 0 0 0 rgba(34,197,94,.7);animation:pulseDot 2s infinite}
+    @keyframes pulseDot{70%{box-shadow:0 0 0 10px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+    .nav-link{position:relative}
+    .nav-link::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:#f59e0b;transition:width .25s ease}
+    .nav-link:hover::after{width:100%}
   </style>
 </head>
-<body class="font-sans bg-gray-50 text-gray-800">
+<body class="font-sans bg-slate-50 text-slate-800">
+
+  <!-- Accent top bar -->
+  <div class="topbar h-1.5 w-full"></div>
+
   <!-- Navigation -->
-  <nav class="bg-white shadow-md sticky top-0 z-50">
+  <nav class="bg-ink/95 backdrop-blur text-white shadow-lg sticky top-0 z-50 border-b border-white/10">
     <div class="container mx-auto px-6 py-3 flex justify-between items-center">
       <div class="flex items-center">
-        <i class="fas fa-bolt text-blue-600 text-2xl mr-2"></i>
-        <span class="font-bold text-xl">Isaiah Latta</span>
+        <i class="fas fa-bolt text-volt text-2xl mr-2"></i>
+        <span class="font-display font-bold text-xl tracking-wide uppercase">Isaiah Latta</span>
       </div>
-      <div class="hidden md:flex space-x-8">
-        <a href="#about" class="hover:text-blue-600 transition">About</a>
-        <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
-        <a href="#experience" class="hover:text-blue-600 transition">Experience</a>
-        <a href="#gallery" class="hover:text-blue-600 transition">Gallery</a>
-        <a href="#certifications" class="hover:text-blue-600 transition">Certifications</a>
-        <a href="#why-me" class="hover:text-blue-600 transition">Why Hire Me</a>
-        <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+      <div class="hidden md:flex space-x-7 text-sm font-semibold uppercase tracking-wide">
+        <a href="#about" class="nav-link hover:text-volt transition">About</a>
+        <a href="#skills" class="nav-link hover:text-volt transition">Skills</a>
+        <a href="#experience" class="nav-link hover:text-volt transition">Experience</a>
+        <a href="#gallery" class="nav-link hover:text-volt transition">Gallery</a>
+        <a href="#certifications" class="nav-link hover:text-volt transition">Certs</a>
+        <a href="#why-me" class="nav-link hover:text-volt transition">Why Me</a>
+        <a href="#contact" class="nav-link hover:text-volt transition">Contact</a>
       </div>
       <button class="md:hidden focus:outline-none" id="menuBtn" aria-label="Open Menu">
         <i class="fas fa-bars text-xl"></i>
       </button>
     </div>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 px-6 py-4 space-y-3 text-sm font-semibold uppercase tracking-wide">
+      <a href="#about" class="block hover:text-volt">About</a>
+      <a href="#skills" class="block hover:text-volt">Skills</a>
+      <a href="#experience" class="block hover:text-volt">Experience</a>
+      <a href="#gallery" class="block hover:text-volt">Gallery</a>
+      <a href="#certifications" class="block hover:text-volt">Certifications</a>
+      <a href="#why-me" class="block hover:text-volt">Why Me</a>
+      <a href="#contact" class="block hover:text-volt">Contact</a>
+    </div>
   </nav>
 
   <!-- Hero -->
-  <section class="hero-gradient text-white py-20">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-      <div class="md:w-1/2 mb-10 md:mb-0">
-        <span class="inline-flex items-center bg-white/10 border border-white/20 rounded-full px-3 py-1 mb-3 text-sm backdrop-blur">
-          <i class="fa-solid fa-helmet-safety mr-2"></i> Currently: Crux Subsurfacing (Groundman · 7/12s)
+  <header id="hero" class="hero-bg text-white relative overflow-hidden" style="background-image: linear-gradient(180deg,rgba(11,18,32,.72),rgba(11,18,32,.96)), url('https://d8j0ntlcm91z4.cloudfront.net/user_3ErLa2VHyrqx6xR69DoM0K999wt/hf_20260608_154804_631922ac-d88b-4cf0-850e-fde909f6087e.jpeg');">
+    <div class="container mx-auto px-6 py-24 md:py-32 relative z-10">
+      <div class="max-w-3xl">
+        <span class="inline-flex items-center bg-green-500/15 border border-green-400/40 rounded-full px-4 py-1.5 mb-6 text-sm font-semibold">
+          <span class="pulse-dot w-2.5 h-2.5 rounded-full bg-green-400 mr-2.5"></span>
+          Available now · Actively seeking a lineman apprenticeship
         </span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Aspiring Lineman Apprentice</h1>
-        <p class="text-xl mb-8">Graduate of American Lineman College | CDL Class A | OSHA-10 Certified</p>
+        <p class="eyebrow text-volt mb-4">American Lineman College Graduate</p>
+        <h1 class="font-display font-bold uppercase leading-[0.95] text-5xl md:text-7xl mb-6">
+          Lineman<br><span class="text-volt">Apprentice</span>
+        </h1>
+        <p class="text-lg md:text-2xl text-slate-200 mb-8 max-w-2xl font-medium">
+          CDL Class A · Climbing Certified · OSHA-10 — ready to hit the ground running and grow into the trade.
+        </p>
         <div class="flex flex-wrap gap-4">
-          <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Contact Me</a>
-          <a href="#certifications" class="border-2 border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition">View Certifications</a>
-          <a href="resume-summary.html" class="bg-white/10 border border-white/20 px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition"><i class="fas fa-file-pdf mr-2"></i> 1-Page PDF</a>
+          <a href="#contact" class="bg-volt text-ink px-7 py-3.5 rounded-lg font-bold uppercase tracking-wide text-sm hover:bg-amber-400 transition shadow-lg shadow-amber-500/20">
+            <i class="fas fa-paper-plane mr-2"></i> Hire Me
+          </a>
+          <a href="#certifications" class="border-2 border-white/70 px-7 py-3.5 rounded-lg font-bold uppercase tracking-wide text-sm hover:bg-white hover:text-ink transition">
+            View Certifications
+          </a>
+          <a href="resume-summary.html" class="bg-white/10 border border-white/25 px-7 py-3.5 rounded-lg font-bold uppercase tracking-wide text-sm hover:bg-white hover:text-ink transition backdrop-blur">
+            <i class="fas fa-file-pdf mr-2"></i> 1-Page PDF
+          </a>
         </div>
-      </div>
-      <div class="md:w-1/2 flex justify-center">
-        <div class="relative">
-          <img src="https://images.unsplash.com/photo-1581092921461-39b2f2a8b162?auto=format&fit=crop&w=1470&q=80" alt="Lineman at work" class="rounded-lg shadow-2xl w-full max-w-md"/>
-          <div class="absolute -bottom-5 -right-5 bg-yellow-400 text-gray-900 px-4 py-2 rounded-lg shadow-lg font-bold cert-badge">
-            <i class="fas fa-certificate mr-2"></i> ALC Graduate
+        <!-- Quick stats -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-14 max-w-2xl">
+          <div>
+            <div class="font-display text-3xl md:text-4xl font-bold text-volt">5+ yrs</div>
+            <div class="text-xs uppercase tracking-wide text-slate-300 mt-1">Working at height</div>
+          </div>
+          <div>
+            <div class="font-display text-3xl md:text-4xl font-bold text-volt">ALC</div>
+            <div class="text-xs uppercase tracking-wide text-slate-300 mt-1">Graduate</div>
+          </div>
+          <div>
+            <div class="font-display text-3xl md:text-4xl font-bold text-volt">Class A</div>
+            <div class="text-xs uppercase tracking-wide text-slate-300 mt-1">CDL + endorsements</div>
+          </div>
+          <div>
+            <div class="font-display text-3xl md:text-4xl font-bold text-volt">6</div>
+            <div class="text-xs uppercase tracking-wide text-slate-300 mt-1">Certifications</div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
   <!-- About -->
-  <section id="about" class="py-16 bg-white">
+  <section id="about" class="py-20 bg-white">
     <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
-      <div class="flex flex-col md:flex-row items-center">
-        <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
-          <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg">
-            <img src="Headshot.jpg" alt="Isaiah Latta headshot" class="w-full h-full object-cover"/>
+      <div class="mb-12">
+        <p class="eyebrow text-volt">Get to know me</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold uppercase accent-underline">About Me</h2>
+      </div>
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/3 flex justify-center">
+          <div class="relative">
+            <div class="w-64 h-64 rounded-2xl overflow-hidden border-4 border-volt shadow-2xl rotate-2">
+              <img src="Headshot.jpg" alt="Isaiah Latta headshot" class="w-full h-full object-cover"/>
+            </div>
+            <div class="absolute -bottom-4 -left-4 bg-ink text-white px-4 py-2 rounded-lg shadow-lg font-display uppercase text-sm tracking-wide">
+              <i class="fas fa-helmet-safety text-volt mr-2"></i> Ready to climb
+            </div>
           </div>
         </div>
-        <div class="md:w-2/3 md:pl-12">
-          <h3 class="text-2xl font-semibold mb-4">Isaiah Latta</h3>
-          <p class="text-lg mb-6">
-            I am a graduate of American Lineman College in Bakersfield, California with extensive experience in rigging and working at heights from my 5 years as a professional stagehand.
-            <strong>Currently, I work as a Groundman at Crux Subsurfacing</strong> in Crescent City, CA (core-sample drilling).
-            I’m <strong>working 7/12s (84 hours/week)</strong>, demonstrating reliability, stamina, and commitment in tough field conditions.
-            My Class A CDL with tanker and triples/doubles endorsements, combined with my climbing certification and safety training, make me exceptionally prepared to begin my career as a lineman apprentice.
+        <div class="md:w-2/3">
+          <h3 class="font-display text-3xl font-bold mb-4 uppercase">Isaiah Latta</h3>
+          <p class="text-lg mb-5 text-slate-600 leading-relaxed">
+            I'm a graduate of <strong>American Lineman College</strong> in Bakersfield, California, with extensive experience in rigging and working at heights from my 5 years as a professional stagehand.
+            Most recently I worked as a <strong>Groundman at Crux Subsurfacing</strong> in Crescent City, CA (geotechnical core-sample drilling) from September 2025 to January 2026, where I ran <strong>7/12s (84-hour weeks)</strong> in tough field conditions — proving reliability, stamina, and commitment.
+          </p>
+          <p class="text-lg mb-6 text-slate-600 leading-relaxed">
+            I'm now <strong>available immediately</strong> and actively pursuing a lineman apprenticeship. My Class A CDL with tanker and triples/doubles endorsements, combined with my climbing certification and safety training, make me exceptionally prepared to start day one.
           </p>
           <div class="grid grid-cols-2 gap-4">
-            <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i><span>San Clemente, CA</span></div>
-            <div class="flex items-center"><i class="fas fa-phone text-blue-600 mr-2"></i><span>(949) 547-7464</span></div>
-            <div class="flex items-center"><i class="fas fa-envelope text-blue-600 mr-2"></i><span>Isaiahlatta@hotmail.com</span></div>
-            <div class="flex items-center"><i class="fas fa-id-card text-blue-600 mr-2"></i><span>CDL Class A Licensed</span></div>
+            <div class="flex items-center bg-slate-50 rounded-lg px-4 py-3"><i class="fas fa-map-marker-alt text-volt mr-3"></i><span class="font-medium">San Clemente, CA</span></div>
+            <div class="flex items-center bg-slate-50 rounded-lg px-4 py-3"><i class="fas fa-phone text-volt mr-3"></i><span class="font-medium">(949) 547-7464</span></div>
+            <div class="flex items-center bg-slate-50 rounded-lg px-4 py-3"><i class="fas fa-envelope text-volt mr-3"></i><span class="font-medium">Isaiahlatta@hotmail.com</span></div>
+            <div class="flex items-center bg-slate-50 rounded-lg px-4 py-3"><i class="fas fa-id-card text-volt mr-3"></i><span class="font-medium">CDL Class A Licensed</span></div>
           </div>
         </div>
       </div>
@@ -96,139 +181,147 @@
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="py-16 bg-gray-100">
+  <section id="skills" class="py-20 bg-slate-100">
     <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-12">My Skills</h2>
-      <div class="grid md:grid-cols-3 gap-8 reveal">
-        <div class="skill-card bg-white p-6 rounded-lg shadow-md transition duration-300">
-          <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-truck-moving"></i></div>
-          <h3 class="text-xl font-semibold mb-2">CDL Operation</h3>
-          <p class="text-gray-600">Class A CDL with tanker and triples/doubles endorsements. Experienced in operating large vehicles and understanding DOT regulations.</p>
+      <div class="mb-12 text-center">
+        <p class="eyebrow text-volt">What I bring</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold uppercase accent-underline center inline-block">My Skills</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-7 reveal">
+        <div class="skill-card bg-white p-7 rounded-xl shadow-sm border-2 border-transparent">
+          <div class="w-14 h-14 rounded-lg bg-ink flex items-center justify-center text-volt text-2xl mb-5"><i class="fas fa-truck-moving"></i></div>
+          <h3 class="font-display text-xl font-bold uppercase mb-2">CDL Operation</h3>
+          <p class="text-slate-600">Class A CDL with tanker and triples/doubles endorsements. Experienced operating large vehicles and versed in DOT regulations.</p>
         </div>
-        <div class="skill-card bg-white p-6 rounded-lg shadow-md transition duration-300">
-          <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-mountain"></i></div>
-          <h3 class="text-xl font-semibold mb-2">Climbing & Rigging</h3>
-          <p class="text-gray-600">Certified climber with 5 years of light rigging experience from stagehand work. Comfortable working at heights and with heavy equipment.</p>
+        <div class="skill-card bg-white p-7 rounded-xl shadow-sm border-2 border-transparent">
+          <div class="w-14 h-14 rounded-lg bg-ink flex items-center justify-center text-volt text-2xl mb-5"><i class="fas fa-mountain"></i></div>
+          <h3 class="font-display text-xl font-bold uppercase mb-2">Climbing &amp; Rigging</h3>
+          <p class="text-slate-600">Certified climber with 5 years of light rigging from stagehand work. Comfortable working at heights and around heavy equipment.</p>
         </div>
-        <div class="skill-card bg-white p-6 rounded-lg shadow-md transition duration-300">
-          <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-shield-alt"></i></div>
-          <h3 class="text-xl font-semibold mb-2">Safety Compliance</h3>
-          <p class="text-gray-600">OSHA-10 certified with additional flagger certification. Strong commitment to safety protocols in high-risk environments.</p>
+        <div class="skill-card bg-white p-7 rounded-xl shadow-sm border-2 border-transparent">
+          <div class="w-14 h-14 rounded-lg bg-ink flex items-center justify-center text-volt text-2xl mb-5"><i class="fas fa-shield-alt"></i></div>
+          <h3 class="font-display text-xl font-bold uppercase mb-2">Safety Compliance</h3>
+          <p class="text-slate-600">OSHA-10 certified with flagger certification. A strong, proven commitment to safety protocols in high-risk environments.</p>
         </div>
-        <div class="skill-card bg-white p-6 rounded-lg shadow-md transition duration-300">
-          <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-bolt"></i></div>
-          <h3 class="text-xl font-semibold mb-2">Linework Training</h3>
-          <p class="text-gray-600">Graduate of American Lineman College with hands-on training in pole climbing, transformer installation, and underground systems.</p>
+        <div class="skill-card bg-white p-7 rounded-xl shadow-sm border-2 border-transparent">
+          <div class="w-14 h-14 rounded-lg bg-ink flex items-center justify-center text-volt text-2xl mb-5"><i class="fas fa-bolt"></i></div>
+          <h3 class="font-display text-xl font-bold uppercase mb-2">Linework Training</h3>
+          <p class="text-slate-600">ALC graduate with hands-on training in pole climbing, transformer installation, and underground systems.</p>
         </div>
-        <div class="skill-card bg-white p-6 rounded-lg shadow-md transition duration-300">
-          <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-medkit"></i></div>
-          <h3 class="text-xl font-semibold mb-2">Emergency Response</h3>
-          <p class="text-gray-600">Current First Aid and CPR certification. Able to respond effectively to worksite emergencies and injuries.</p>
+        <div class="skill-card bg-white p-7 rounded-xl shadow-sm border-2 border-transparent">
+          <div class="w-14 h-14 rounded-lg bg-ink flex items-center justify-center text-volt text-2xl mb-5"><i class="fas fa-medkit"></i></div>
+          <h3 class="font-display text-xl font-bold uppercase mb-2">Emergency Response</h3>
+          <p class="text-slate-600">Current First Aid and CPR certification. Able to respond effectively to worksite emergencies and injuries.</p>
         </div>
-        <div class="skill-card bg-white p-6 rounded-lg shadow-md transition duration-300">
-          <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-users"></i></div>
-          <h3 class="text-xl font-semibold mb-2">Team Coordination</h3>
-          <p class="text-gray-600">Experienced in crew coordination from stagehand work. Understands the importance of communication in high-risk team environments.</p>
+        <div class="skill-card bg-white p-7 rounded-xl shadow-sm border-2 border-transparent">
+          <div class="w-14 h-14 rounded-lg bg-ink flex items-center justify-center text-volt text-2xl mb-5"><i class="fas fa-users"></i></div>
+          <h3 class="font-display text-xl font-bold uppercase mb-2">Team Coordination</h3>
+          <p class="text-slate-600">Experienced in crew coordination from stagehand and drilling work. Clear communication in high-risk team environments.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Experience -->
-  <section id="experience" class="py-16 bg-white">
+  <section id="experience" class="py-20 bg-white">
     <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-12">My Experience</h2>
-      <div class="relative reveal">
-        <!-- Current Employment -->
+      <div class="mb-12">
+        <p class="eyebrow text-volt">Where I've been</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold uppercase accent-underline">My Experience</h2>
+      </div>
+      <div class="relative reveal max-w-3xl">
+        <!-- Crux -->
         <div class="timeline-item relative pl-16 pb-10">
-          <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white"><i class="fas fa-hard-hat"></i></div>
-          <h3 class="text-xl font-semibold mb-1">Groundman | Crux Subsurfacing</h3>
-          <div class="text-gray-600 mb-2">Crescent City, CA | September 5, 2025 – Present</div>
-          <p class="text-gray-700">
-            Drilling company focused on geotechnical core sampling. Responsibilities include heavy lifting, assisting with and around heavy drilling machinery,
-            safe worksite setup/cleanup, and tight crew coordination to meet production and safety targets.
-            <strong>Current schedule: 7/12s (seven days a week, 12-hour shifts)</strong> as needed to meet project timelines and maintain safe operations.
+          <div class="absolute left-0 top-0 w-12 h-12 rounded-lg bg-ink flex items-center justify-center text-volt shadow-md"><i class="fas fa-hard-hat"></i></div>
+          <h3 class="font-display text-xl font-bold uppercase mb-1">Groundman · Crux Subsurfacing</h3>
+          <div class="text-volt font-semibold text-sm uppercase tracking-wide mb-2">Crescent City, CA · Sep 2025 – Jan 2026</div>
+          <p class="text-slate-600">
+            Geotechnical core-sampling drilling company. Handled heavy lifting, worked on and around heavy drilling machinery, and ran safe worksite setup/cleanup with tight crew coordination to hit production and safety targets.
+            Sustained a demanding <strong>7/12s schedule (seven days a week, 12-hour shifts)</strong> to meet project timelines while keeping operations safe.
           </p>
         </div>
         <!-- ALC -->
         <div class="timeline-item relative pl-16 pb-10">
-          <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white"><i class="fas fa-graduation-cap"></i></div>
-          <h3 class="text-xl font-semibold mb-1">American Lineman College</h3>
-          <div class="text-gray-600 mb-2">Bakersfield, CA | 2025</div>
-          <p class="text-gray-700">Comprehensive training across pole climbing, transformer installation, underground systems, and electrical theory; hands-on with industry-standard equipment and safety protocols.</p>
+          <div class="absolute left-0 top-0 w-12 h-12 rounded-lg bg-ink flex items-center justify-center text-volt shadow-md"><i class="fas fa-graduation-cap"></i></div>
+          <h3 class="font-display text-xl font-bold uppercase mb-1">American Lineman College</h3>
+          <div class="text-volt font-semibold text-sm uppercase tracking-wide mb-2">Bakersfield, CA · 2025</div>
+          <p class="text-slate-600">Comprehensive training across pole climbing, transformer installation, underground systems, and electrical theory — hands-on with industry-standard equipment and safety protocols.</p>
         </div>
         <!-- Stagehand -->
         <div class="timeline-item relative pl-16 pb-10">
-          <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white"><i class="fas fa-theater-masks"></i></div>
-          <h3 class="text-xl font-semibold mb-1">Professional Stagehand</h3>
-          <div class="text-gray-600 mb-2">2020–2025</div>
-          <p class="text-gray-700">Heavy lifting, light rigging, and occasional leadership. Set up and operated rigging systems, worked at heights, and coordinated with crews under tight deadlines.</p>
+          <div class="absolute left-0 top-0 w-12 h-12 rounded-lg bg-ink flex items-center justify-center text-volt shadow-md"><i class="fas fa-theater-masks"></i></div>
+          <h3 class="font-display text-xl font-bold uppercase mb-1">Professional Stagehand</h3>
+          <div class="text-volt font-semibold text-sm uppercase tracking-wide mb-2">2020 – 2025</div>
+          <p class="text-slate-600">Heavy lifting, light rigging, and occasional leadership. Built and operated rigging systems, worked at heights, and coordinated with crews under tight deadlines.</p>
         </div>
         <!-- CDL -->
-        <div class="timeline-item relative pl-16 pb-10">
-          <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white"><i class="fas fa-truck"></i></div>
-          <h3 class="text-xl font-semibold mb-1">CDL Training & Certification</h3>
-          <div class="text-gray-600 mb-2">2024</div>
-          <p class="text-gray-700">Class A Commercial Driver's License with tanker and triples/doubles endorsements. Trained in vehicle operation, safety procedures, and DOT regulations.</p>
+        <div class="timeline-item relative pl-16 pb-2">
+          <div class="absolute left-0 top-0 w-12 h-12 rounded-lg bg-ink flex items-center justify-center text-volt shadow-md"><i class="fas fa-truck"></i></div>
+          <h3 class="font-display text-xl font-bold uppercase mb-1">CDL Training &amp; Certification</h3>
+          <div class="text-volt font-semibold text-sm uppercase tracking-wide mb-2">2024</div>
+          <p class="text-slate-600">Class A Commercial Driver's License with tanker and triples/doubles endorsements. Trained in vehicle operation, safety procedures, and DOT regulations.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- THEMED Photo Gallery (expanded) -->
-  <section id="gallery" class="py-20 bg-gradient-to-b from-white via-gray-50 to-white">
+  <!-- Photo Gallery -->
+  <section id="gallery" class="py-20 bg-slate-100">
     <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-12">Photo Gallery</h2>
+      <div class="mb-12 text-center">
+        <p class="eyebrow text-volt">On the job</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold uppercase accent-underline center inline-block">Photo Gallery</h2>
+      </div>
 
-      <!-- Theme: Crux Subsurfacing Night Work -->
-      <h3 class="text-xl font-semibold mb-4 reveal">Crux Subsurfacing — Night Work</h3>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 reveal">
-        <figure class="rounded-lg overflow-hidden shadow">
-          <img src="Images/crux-night-yard.png" alt="Night drilling yard from operator cab with lights and heavy equipment" class="gallery-img w-full h-full object-cover" loading="lazy" />
-          <figcaption class="px-3 py-2 text-sm text-gray-600">From the cab — coordinating heavy equipment on nights.</figcaption>
+      <!-- Crux Night Work -->
+      <h3 class="font-display text-2xl font-bold uppercase mb-5 reveal flex items-center"><span class="w-2 h-7 bg-volt mr-3 rounded"></span>Crux Subsurfacing — Night Work</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-14 reveal">
+        <figure class="rounded-xl overflow-hidden shadow-lg bg-white">
+          <div class="overflow-hidden"><img src="Images/crux-night-yard.png" alt="Night drilling yard from operator cab with lights and heavy equipment" class="gallery-img w-full h-60 object-cover cursor-pointer" loading="lazy" /></div>
+          <figcaption class="px-4 py-3 text-sm text-slate-600">From the cab — coordinating heavy equipment on nights.</figcaption>
         </figure>
-        <figure class="rounded-lg overflow-hidden shadow">
-          <img src="Images/crux-night-drill1.jpeg" alt="Crew monitoring geotechnical drill with hydraulic hoses and lights at night" class="gallery-img w-full h-full object-cover" loading="lazy" />
-          <figcaption class="px-3 py-2 text-sm text-gray-600">Live core-sample drilling — crew coordination and site safety.</figcaption>
+        <figure class="rounded-xl overflow-hidden shadow-lg bg-white">
+          <div class="overflow-hidden"><img src="Images/crux-night-drill1.jpeg" alt="Crew monitoring geotechnical drill with hydraulic hoses and lights at night" class="gallery-img w-full h-60 object-cover cursor-pointer" loading="lazy" /></div>
+          <figcaption class="px-4 py-3 text-sm text-slate-600">Live core-sample drilling — crew coordination and site safety.</figcaption>
         </figure>
-        <figure class="rounded-lg overflow-hidden shadow">
-          <img src="Images/crux-night-drill2.jpeg" alt="Night drill rig platform surrounded by cables, generator, and hydraulic lines" class="gallery-img w-full h-full object-cover" loading="lazy" />
-          <figcaption class="px-3 py-2 text-sm text-gray-600">Rig platform, lines, and power — organized and controlled.</figcaption>
+        <figure class="rounded-xl overflow-hidden shadow-lg bg-white">
+          <div class="overflow-hidden"><img src="Images/crux-night-drill2.jpeg" alt="Night drill rig platform surrounded by cables, generator, and hydraulic lines" class="gallery-img w-full h-60 object-cover cursor-pointer" loading="lazy" /></div>
+          <figcaption class="px-4 py-3 text-sm text-slate-600">Rig platform, lines, and power — organized and controlled.</figcaption>
         </figure>
       </div>
 
-      <!-- Theme: Bucket/Crane Ops -->
-      <h3 class="text-xl font-semibold mb-4 reveal">Bucket & Crane Operations</h3>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 reveal">
-        <figure class="rounded-lg overflow-hidden shadow">
-          <img src="Images/crane-ops.png" alt="Operating a crane truck with outriggers deployed at the training yard" class="gallery-img w-full h-full object-cover" loading="lazy" />
-          <figcaption class="px-3 py-2 text-sm text-gray-600">Crane operations — rigging, hand signals, safe lifting.</figcaption>
+      <!-- Bucket/Crane Ops -->
+      <h3 class="font-display text-2xl font-bold uppercase mb-5 reveal flex items-center"><span class="w-2 h-7 bg-volt mr-3 rounded"></span>Bucket &amp; Crane Operations</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-14 reveal">
+        <figure class="rounded-xl overflow-hidden shadow-lg bg-white">
+          <div class="overflow-hidden"><img src="Images/crane-ops.png" alt="Operating a crane truck with outriggers deployed at the training yard" class="gallery-img w-full h-60 object-cover cursor-pointer" loading="lazy" /></div>
+          <figcaption class="px-4 py-3 text-sm text-slate-600">Crane operations — rigging, hand signals, safe lifting.</figcaption>
         </figure>
-        <figure class="rounded-lg overflow-hidden shadow">
-          <img src="Images/bucket-inspection.png" alt="Inspecting and operating an Altec bucket truck" class="gallery-img w-full h-full object-cover" loading="lazy" />
-          <figcaption class="px-3 py-2 text-sm text-gray-600">Bucket truck inspection & operation — pre-use checks.</figcaption>
-        </figure>
-      </div>
-
-      <!-- Theme: Climbing & Pole Work -->
-      <h3 class="text-xl font-semibold mb-4 reveal">Climbing & Pole Work</h3>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 reveal">
-        <figure class="rounded-lg overflow-hidden shadow">
-          <img src="Images/training-yard-poles.png" alt="Multiple trainees on poles and a bucket truck in the training yard" class="gallery-img w-full h-full object-cover" loading="lazy" />
-          <figcaption class="px-3 py-2 text-sm text-gray-600">Crossarm work and bucket coordination at the yard.</figcaption>
-        </figure>
-        <figure class="rounded-lg overflow-hidden shadow">
-          <img src="Images/pole-high-silhouette.png" alt="Silhouette climbing high on a single utility pole" class="gallery-img w-full h-full object-cover" loading="lazy" />
-          <figcaption class="px-3 py-2 text-sm text-gray-600">Solo climb — focus on positioning and fall protection.</figcaption>
+        <figure class="rounded-xl overflow-hidden shadow-lg bg-white">
+          <div class="overflow-hidden"><img src="Images/bucket-inspection.png" alt="Inspecting and operating an Altec bucket truck" class="gallery-img w-full h-60 object-cover cursor-pointer" loading="lazy" /></div>
+          <figcaption class="px-4 py-3 text-sm text-slate-600">Bucket truck inspection &amp; operation — pre-use checks.</figcaption>
         </figure>
       </div>
 
-      <!-- Theme: Electrical Concepts & Lab -->
-      <h3 class="text-xl font-semibold mb-4 reveal">Electrical Concepts & Lab</h3>
+      <!-- Climbing & Pole Work -->
+      <h3 class="font-display text-2xl font-bold uppercase mb-5 reveal flex items-center"><span class="w-2 h-7 bg-volt mr-3 rounded"></span>Climbing &amp; Pole Work</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-14 reveal">
+        <figure class="rounded-xl overflow-hidden shadow-lg bg-white">
+          <div class="overflow-hidden"><img src="Images/training-yard-poles.png" alt="Multiple trainees on poles and a bucket truck in the training yard" class="gallery-img w-full h-60 object-cover cursor-pointer" loading="lazy" /></div>
+          <figcaption class="px-4 py-3 text-sm text-slate-600">Crossarm work and bucket coordination at the yard.</figcaption>
+        </figure>
+        <figure class="rounded-xl overflow-hidden shadow-lg bg-white">
+          <div class="overflow-hidden"><img src="Images/pole-high-silhouette.png" alt="Silhouette climbing high on a single utility pole" class="gallery-img w-full h-60 object-cover cursor-pointer" loading="lazy" /></div>
+          <figcaption class="px-4 py-3 text-sm text-slate-600">Solo climb — focus on positioning and fall protection.</figcaption>
+        </figure>
+      </div>
+
+      <!-- Electrical Concepts & Lab -->
+      <h3 class="font-display text-2xl font-bold uppercase mb-5 reveal flex items-center"><span class="w-2 h-7 bg-volt mr-3 rounded"></span>Electrical Concepts &amp; Lab</h3>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
-        <figure class="rounded-lg overflow-hidden shadow">
-          <img src="Images/line-model-lab.png" alt="Table-top distribution line model with insulators and conductors" class="gallery-img w-full h-full object-cover" loading="lazy" />
-          <figcaption class="px-3 py-2 text-sm text-gray-600">Table-top distribution model — circuits & clearances.</figcaption>
+        <figure class="rounded-xl overflow-hidden shadow-lg bg-white">
+          <div class="overflow-hidden"><img src="Images/line-model-lab.png" alt="Table-top distribution line model with insulators and conductors" class="gallery-img w-full h-60 object-cover cursor-pointer" loading="lazy" /></div>
+          <figcaption class="px-4 py-3 text-sm text-slate-600">Table-top distribution model — circuits &amp; clearances.</figcaption>
         </figure>
       </div>
     </div>
@@ -236,7 +329,7 @@
     <!-- Modal -->
     <div id="galleryModal" class="fixed inset-0 hidden items-center justify-center modal-bg z-50 p-4">
       <div class="relative max-w-5xl w-full">
-        <button id="modalClose" class="absolute -top-10 right-0 text-white text-2xl" aria-label="Close">&times;</button>
+        <button id="modalClose" class="absolute -top-10 right-0 text-white text-3xl" aria-label="Close">&times;</button>
         <img id="modalImg" src="" alt="Preview" class="w-full rounded-lg shadow-2xl"/>
         <div id="modalCaption" class="text-white/90 mt-3 text-sm"></div>
       </div>
@@ -244,67 +337,70 @@
   </section>
 
   <!-- Certifications -->
-  <section id="certifications" class="py-16 bg-blue-50">
+  <section id="certifications" class="py-20 bg-ink text-white">
     <div class="container mx-auto px-6">
-      <h2 class="text-3l font-bold text-center mb-12">My Certifications</h2>
+      <div class="mb-12 text-center">
+        <p class="eyebrow text-volt">Credentials</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold uppercase accent-underline center inline-block">My Certifications</h2>
+      </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
-        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+        <div class="bg-steel p-6 rounded-xl border-l-4 border-volt">
           <div class="flex items-start">
-            <div class="bg-blue-100 p-3 rounded-full mr-4"><i class="fas fa-certificate text-blue-600 text-xl"></i></div>
+            <div class="bg-volt/15 p-3 rounded-lg mr-4"><i class="fas fa-certificate text-volt text-xl"></i></div>
             <div>
-              <h3 class="text-xl font-semibold mb-1">American Lineman College</h3>
-              <p class="text-gray-600">Graduate Certification</p>
-              <p class="text-gray-700 mt-2">Comprehensive lineman training across overhead and underground systems.</p>
+              <h3 class="font-display text-xl font-bold uppercase mb-1">American Lineman College</h3>
+              <p class="text-volt text-sm font-semibold uppercase tracking-wide">Graduate Certification</p>
+              <p class="text-slate-300 mt-2">Comprehensive lineman training across overhead and underground systems.</p>
             </div>
           </div>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+        <div class="bg-steel p-6 rounded-xl border-l-4 border-volt">
           <div class="flex items-start">
-            <div class="bg-blue-100 p-3 rounded-full mr-4"><i class="fas fa-truck text-blue-600 text-xl"></i></div>
+            <div class="bg-volt/15 p-3 rounded-lg mr-4"><i class="fas fa-truck text-volt text-xl"></i></div>
             <div>
-              <h3 class="text-xl font-semibold mb-1">Class A CDL</h3>
-              <p class="text-gray-600">Tanker & Triples/Doubles Endorsements</p>
-              <p class="text-gray-700 mt-2">Licensed for commercial vehicles with specialized hauling endorsements.</p>
+              <h3 class="font-display text-xl font-bold uppercase mb-1">Class A CDL</h3>
+              <p class="text-volt text-sm font-semibold uppercase tracking-wide">Tanker &amp; Triples/Doubles</p>
+              <p class="text-slate-300 mt-2">Licensed for commercial vehicles with specialized hauling endorsements.</p>
             </div>
           </div>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+        <div class="bg-steel p-6 rounded-xl border-l-4 border-volt">
           <div class="flex items-start">
-            <div class="bg-blue-100 p-3 rounded-full mr-4"><i class="fas fa-shield-alt text-blue-600 text-xl"></i></div>
+            <div class="bg-volt/15 p-3 rounded-lg mr-4"><i class="fas fa-shield-alt text-volt text-xl"></i></div>
             <div>
-              <h3 class="text-xl font-semibold mb-1">OSHA-10</h3>
-              <p class="text-gray-600">Construction Safety</p>
-              <p class="text-gray-700 mt-2">10-hour OSHA training in construction safety and health hazards.</p>
+              <h3 class="font-display text-xl font-bold uppercase mb-1">OSHA-10</h3>
+              <p class="text-volt text-sm font-semibold uppercase tracking-wide">Construction Safety</p>
+              <p class="text-slate-300 mt-2">10-hour OSHA training in construction safety and health hazards.</p>
             </div>
           </div>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+        <div class="bg-steel p-6 rounded-xl border-l-4 border-volt">
           <div class="flex items-start">
-            <div class="bg-blue-100 p-3 rounded-full mr-4"><i class="fas fa-flag text-blue-600 text-xl"></i></div>
+            <div class="bg-volt/15 p-3 rounded-lg mr-4"><i class="fas fa-flag text-volt text-xl"></i></div>
             <div>
-              <h3 class="text-xl font-semibold mb-1">Flagger Certification</h3>
-              <p class="text-gray-600">Traffic Control</p>
-              <p class="text-gray-700 mt-2">Proper traffic control procedures for work zones and construction sites.</p>
+              <h3 class="font-display text-xl font-bold uppercase mb-1">Flagger Certification</h3>
+              <p class="text-volt text-sm font-semibold uppercase tracking-wide">Traffic Control</p>
+              <p class="text-slate-300 mt-2">Proper traffic control procedures for work zones and construction sites.</p>
             </div>
           </div>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+        <div class="bg-steel p-6 rounded-xl border-l-4 border-volt">
           <div class="flex items-start">
-            <div class="bg-blue-100 p-3 rounded-full mr-4"><i class="fas fa-medkit text-blue-600 text-xl"></i></div>
+            <div class="bg-volt/15 p-3 rounded-lg mr-4"><i class="fas fa-medkit text-volt text-xl"></i></div>
             <div>
-              <h3 class="text-xl font-semibold mb-1">First Aid & CPR</h3>
-              <p class="text-gray-600">Emergency Response</p>
-              <p class="text-gray-700 mt-2">Trained to respond to workplace injuries and emergencies.</p>
+              <h3 class="font-display text-xl font-bold uppercase mb-1">First Aid &amp; CPR</h3>
+              <p class="text-volt text-sm font-semibold uppercase tracking-wide">Emergency Response</p>
+              <p class="text-slate-300 mt-2">Trained to respond to workplace injuries and emergencies.</p>
             </div>
           </div>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+        <div class="bg-steel p-6 rounded-xl border-l-4 border-volt">
           <div class="flex items-start">
-            <div class="bg-blue-100 p-3 rounded-full mr-4"><i class="fas fa-mountain text-blue-600 text-xl"></i></div>
+            <div class="bg-volt/15 p-3 rounded-lg mr-4"><i class="fas fa-mountain text-volt text-xl"></i></div>
             <div>
-              <h3 class="text-xl font-semibold mb-1">Climbing Certification</h3>
-              <p class="text-gray-600">Height Work Qualification</p>
-              <p class="text-gray-700 mt-2">Safe climbing techniques and fall protection systems.</p>
+              <h3 class="font-display text-xl font-bold uppercase mb-1">Climbing Certification</h3>
+              <p class="text-volt text-sm font-semibold uppercase tracking-wide">Height Work</p>
+              <p class="text-slate-300 mt-2">Safe climbing techniques and fall protection systems.</p>
             </div>
           </div>
         </div>
@@ -313,37 +409,41 @@
   </section>
 
   <!-- Why Hire Me -->
-  <section id="why-me" class="py-16 bg-blue-600 text-white">
+  <section id="why-me" class="py-20 bg-volt text-ink">
     <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-12">Why Hire Me As An Apprentice?</h2>
-      <div class="grid md:grid-cols-2 gap-8 reveal">
-        <div class="bg-blue-700 p-8 rounded-lg">
-          <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fas fa-check-circle mr-3 text-green-300"></i> Unique Experience Combination</h3>
-          <p>5 years of rigging + formal lineman training = fast ramp-up, strong safety habits, and comfort at height.</p>
+      <div class="mb-12 text-center">
+        <p class="eyebrow text-ink/70">The pitch</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold uppercase">Why Hire Me As An Apprentice?</h2>
+        <div class="w-16 h-1 bg-ink rounded mx-auto mt-4"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 reveal">
+        <div class="bg-ink text-white p-8 rounded-xl">
+          <h3 class="font-display text-xl font-bold uppercase mb-3 flex items-center"><i class="fas fa-check-circle mr-3 text-volt"></i> Unique Experience Combination</h3>
+          <p class="text-slate-300">5 years of rigging + formal lineman training = fast ramp-up, strong safety habits, and comfort at height.</p>
         </div>
-        <div class="bg-blue-700 p-8 rounded-lg">
-          <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fas fa-check-circle mr-3 text-green-300"></i> CDL & Endorsements</h3>
-          <p>Ready to drive and deploy equipment from day one—saves time and resources.</p>
+        <div class="bg-ink text-white p-8 rounded-xl">
+          <h3 class="font-display text-xl font-bold uppercase mb-3 flex items-center"><i class="fas fa-check-circle mr-3 text-volt"></i> CDL &amp; Endorsements</h3>
+          <p class="text-slate-300">Ready to drive and deploy equipment from day one — saves time and resources.</p>
         </div>
-        <div class="bg-blue-700 p-8 rounded-lg">
-          <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fas fa-check-circle mr-3 text-green-300"></i> Comprehensive Safety Training</h3>
-          <p>OSHA-10, Flagger, First Aid/CPR, Climbing. Safety-first mindset proven on site.</p>
+        <div class="bg-ink text-white p-8 rounded-xl">
+          <h3 class="font-display text-xl font-bold uppercase mb-3 flex items-center"><i class="fas fa-check-circle mr-3 text-volt"></i> Comprehensive Safety Training</h3>
+          <p class="text-slate-300">OSHA-10, Flagger, First Aid/CPR, Climbing. Safety-first mindset proven on site.</p>
         </div>
-        <div class="bg-blue-700 p-8 rounded-lg">
-          <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fas fa-check-circle mr-3 text-green-300"></i> Proven Work Ethic</h3>
-          <p>Event industry pace: long hours, hard deadlines, and team execution—translates directly to linework.</p>
+        <div class="bg-ink text-white p-8 rounded-xl">
+          <h3 class="font-display text-xl font-bold uppercase mb-3 flex items-center"><i class="fas fa-check-circle mr-3 text-volt"></i> Proven Work Ethic</h3>
+          <p class="text-slate-300">7/12s on a drilling crew and event-industry pace — long hours, hard deadlines, team execution. It translates directly to linework.</p>
         </div>
       </div>
-      <div class="mt-12 text-center reveal">
-        <h3 class="text-2xl font-semibold mb-6">What I Bring to Your Team</h3>
-        <div class="max-w-3xl mx-auto bg-blue-700 p-6 rounded-lg">
+      <div class="mt-12 reveal">
+        <div class="max-w-3xl mx-auto bg-ink text-white p-8 rounded-xl">
+          <h3 class="font-display text-2xl font-bold uppercase mb-6 text-center">What I Bring to Your Team</h3>
           <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-            <li class="flex items-start"><i class="fas fa-check text-green-300 mt-1 mr-2"></i><span>Class A CDL with tanker and triples/doubles endorsements</span></li>
-            <li class="flex items-start"><i class="fas fa-check text-green-300 mt-1 mr-2"></i><span>5 years experience working at heights</span></li>
-            <li class="flex items-start"><i class="fas fa-check text-green-300 mt-1 mr-2"></i><span>Graduate of American Lineman College</span></li>
-            <li class="flex items-start"><i class="fas fa-check text-green-300 mt-1 mr-2"></i><span>OSHA-10, First Aid/CPR, and Flagger certified</span></li>
-            <li class="flex items-start"><i class="fas fa-check text-green-300 mt-1 mr-2"></i><span>Climbing certified with fall protection</span></li>
-            <li class="flex items-start"><i class="fas fa-check text-green-300 mt-1 mr-2"></i><span>Clear communication under pressure</span></li>
+            <li class="flex items-start"><i class="fas fa-bolt text-volt mt-1 mr-3"></i><span>Class A CDL with tanker and triples/doubles endorsements</span></li>
+            <li class="flex items-start"><i class="fas fa-bolt text-volt mt-1 mr-3"></i><span>5 years experience working at heights</span></li>
+            <li class="flex items-start"><i class="fas fa-bolt text-volt mt-1 mr-3"></i><span>Graduate of American Lineman College</span></li>
+            <li class="flex items-start"><i class="fas fa-bolt text-volt mt-1 mr-3"></i><span>OSHA-10, First Aid/CPR, and Flagger certified</span></li>
+            <li class="flex items-start"><i class="fas fa-bolt text-volt mt-1 mr-3"></i><span>Climbing certified with fall protection</span></li>
+            <li class="flex items-start"><i class="fas fa-bolt text-volt mt-1 mr-3"></i><span>Clear communication under pressure</span></li>
           </ul>
         </div>
       </div>
@@ -351,43 +451,46 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-16 bg-white">
+  <section id="contact" class="py-20 bg-white">
     <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-12">Ready to Start My Apprenticeship</h2>
+      <div class="mb-12 text-center">
+        <p class="eyebrow text-volt">Let's talk</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold uppercase accent-underline center inline-block">Ready To Start</h2>
+      </div>
       <div class="max-w-4xl mx-auto">
-        <div class="bg-gray-100 p-8 rounded-lg shadow-md">
-          <h3 class="text-2xl font-semibold mb-6 text-center">Contact Me Today</h3>
+        <div class="bg-slate-50 p-8 rounded-2xl shadow-md border border-slate-100">
           <div class="grid md:grid-cols-2 gap-8">
             <div>
+              <h3 class="font-display text-2xl font-bold uppercase mb-6">Contact Me Today</h3>
               <div class="mb-6">
-                <h4 class="font-semibold mb-2 flex items-center"><i class="fas fa-envelope text-blue-600 mr-2"></i> Email</h4>
-                <a href="mailto:isaiahlatta@hotmail.com" class="text-blue-600 hover:underline">isaiahlatta@hotmail.com</a>
+                <h4 class="font-semibold mb-1 flex items-center text-slate-500 text-sm uppercase tracking-wide"><i class="fas fa-envelope text-volt mr-2"></i> Email</h4>
+                <a href="mailto:isaiahlatta@hotmail.com" class="text-lg font-medium hover:text-volt transition">isaiahlatta@hotmail.com</a>
               </div>
               <div class="mb-6">
-                <h4 class="font-semibold mb-2 flex items-center"><i class="fas fa-phone text-blue-600 mr-2"></i> Phone</h4>
-                <a href="tel:9495477464" class="text-blue-600 hover:underline">(949) 547-7464</a>
+                <h4 class="font-semibold mb-1 flex items-center text-slate-500 text-sm uppercase tracking-wide"><i class="fas fa-phone text-volt mr-2"></i> Phone</h4>
+                <a href="tel:9495477464" class="text-lg font-medium hover:text-volt transition">(949) 547-7464</a>
               </div>
               <div>
-                <h4 class="font-semibold mb-2 flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i> Location</h4>
-                <p>San Clemente, CA</p>
+                <h4 class="font-semibold mb-1 flex items-center text-slate-500 text-sm uppercase tracking-wide"><i class="fas fa-map-marker-alt text-volt mr-2"></i> Location</h4>
+                <p class="text-lg font-medium">San Clemente, CA</p>
               </div>
             </div>
             <div>
               <form method="POST" action="https://formspree.io/f/mwkabgwn">
                 <div class="mb-4">
-                  <label for="name" class="block mb-1 font-medium">Your Name</label>
-                  <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+                  <label for="name" class="block mb-1 font-medium text-sm">Your Name</label>
+                  <input type="text" id="name" name="name" class="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-volt"/>
                 </div>
                 <div class="mb-4">
-                  <label for="email" class="block mb-1 font-medium">Your Email</label>
-                  <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+                  <label for="email" class="block mb-1 font-medium text-sm">Your Email</label>
+                  <input type="email" id="email" name="email" class="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-volt"/>
                 </div>
                 <div class="mb-4">
-                  <label for="message" class="block mb-1 font-medium">Message</label>
-                  <textarea id="message" name="message" rows="3" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                  <label for="message" class="block mb-1 font-medium text-sm">Message</label>
+                  <textarea id="message" name="message" rows="3" class="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-volt"></textarea>
                 </div>
                 <input type="hidden" name="_redirect" value="https://izayuh3.github.io/Lineman-Apprentice-Resume/thank-you.html"/>
-                <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition w-full">Send Message</button>
+                <button type="submit" class="bg-ink text-white px-6 py-3 rounded-lg font-bold uppercase tracking-wide text-sm hover:bg-volt hover:text-ink transition w-full">Send Message</button>
               </form>
             </div>
           </div>
@@ -397,44 +500,40 @@
   </section>
 
   <!-- CTA -->
-  <section class="py-12 bg-gray-800 text-white">
+  <section class="py-16 bg-steel text-white">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-2xl font-bold mb-6">Ready to Add a Highly Qualified Apprentice to Your Team?</h2>
-      <p class="text-xl mb-8 max-w-2xl mx-auto">I'm eager to begin my career in the electrical line trade and would welcome the opportunity to discuss how my unique combination of skills and certifications can benefit your organization.</p>
-      <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition"><i class="fas fa-paper-plane mr-2"></i> Contact Me</a>
-        <a href="resume-summary.html" class="bg-white hover:bg-gray-100 text-gray-800 px-8 py-3 rounded-lg font-semibold transition"><i class="fas fa-file-pdf mr-2"></i> Open 1-Page PDF</a>
+      <h2 class="font-display text-3xl md:text-4xl font-bold uppercase mb-5">Add a Qualified Apprentice to Your Team</h2>
+      <p class="text-lg mb-8 max-w-2xl mx-auto text-slate-300">I'm available immediately and eager to begin my career in the electrical line trade. Let's discuss how my skills and certifications can benefit your crew.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#contact" class="bg-volt text-ink px-8 py-3.5 rounded-lg font-bold uppercase tracking-wide text-sm hover:bg-amber-400 transition"><i class="fas fa-paper-plane mr-2"></i> Contact Me</a>
+        <a href="resume-summary.html" class="bg-white/10 border border-white/25 text-white px-8 py-3.5 rounded-lg font-bold uppercase tracking-wide text-sm hover:bg-white hover:text-ink transition"><i class="fas fa-file-pdf mr-2"></i> Open 1-Page PDF</a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-8">
-    <div class="container mx-auto px-6">
+  <footer class="bg-ink text-white py-10 border-t border-white/10">
+    <div class="container mx-auto px-6 text-center">
       <div class="flex justify-center items-center">
-        <div class="text-center">
-          <div class="flex justify-center items-center">
-            <i class="fas fa-bolt text-blue-400 text-2xl mr-2"></i>
-            <span class="font-bold text-xl">Isaiah Latta</span>
-          </div>
-          <p class="mt-2 text-gray-400">Aspiring Lineman Apprentice</p>
-        </div>
+        <i class="fas fa-bolt text-volt text-2xl mr-2"></i>
+        <span class="font-display font-bold text-xl uppercase tracking-wide">Isaiah Latta</span>
       </div>
-      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-        <p>&copy; 2025 Isaiah Latta. All rights reserved.</p>
+      <p class="mt-2 text-slate-400 uppercase text-sm tracking-wide">Lineman Apprentice · Available Now</p>
+      <div class="border-t border-white/10 mt-8 pt-8 text-center text-slate-500 text-sm">
+        <p>&copy; 2026 Isaiah Latta. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script>
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-      anchor.addEventListener('click',e=>{
-        const target=document.querySelector(anchor.getAttribute('href'));
-        if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth'})}
-      })
+    // Mobile menu toggle
+    document.getElementById('menuBtn')?.addEventListener('click',()=>{
+      document.getElementById('mobileMenu').classList.toggle('hidden');
     });
+    document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>{
+      document.getElementById('mobileMenu').classList.add('hidden');
+    }));
 
     // On-scroll reveal
     const observer=new IntersectionObserver(entries=>{
@@ -444,27 +543,22 @@
     },{threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-    // Simple gallery modal with caption
+    // Gallery modal with caption
     const modal=document.getElementById('galleryModal');
     const modalImg=document.getElementById('modalImg');
     const modalCaption=document.getElementById('modalCaption');
     const closeBtn=document.getElementById('modalClose');
-
     document.querySelectorAll('#gallery figure').forEach(fig=>{
       const img=fig.querySelector('img');
       const cap=fig.querySelector('figcaption')?.innerText||'';
       img.addEventListener('click',()=>{
-        modalImg.src=img.src;
-        modalCaption.textContent=cap;
+        modalImg.src=img.src; modalCaption.textContent=cap;
         modal.classList.remove('hidden'); modal.classList.add('flex');
       });
     });
     const hideModal=()=>{modal.classList.add('hidden'); modal.classList.remove('flex'); modalImg.src=''; modalCaption.textContent='';}
     closeBtn.addEventListener('click',hideModal);
     modal.addEventListener('click',e=>{ if(e.target===modal) hideModal(); });
-
-    // Mobile menu (placeholder)
-    document.getElementById('menuBtn')?.addEventListener('click',()=>{});
   </script>
 </body>
 </html>
