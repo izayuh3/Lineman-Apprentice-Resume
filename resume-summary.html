@@ -13,66 +13,80 @@
     body{ font-family:Roboto,system-ui,Segoe UI,Arial; background:#f3f4f6; }
     .page{
       width:210mm; min-height:297mm; margin:0 auto; background:#fff;
-      box-shadow:0 0 10px rgba(0,0,0,.08); padding:14mm;
+      box-shadow:0 0 10px rgba(0,0,0,.08); padding:11mm 13mm;
     }
     .font-display{ font-family:'Oswald',sans-serif; letter-spacing:.01em; text-transform:uppercase; }
     .header-gradient{ background:linear-gradient(135deg,var(--ink) 0%,var(--steel) 100%); }
-    .accent-bar{ height:6px; background:var(--volt); border-radius:6px; }
-    .skill-pill{ display:inline-block; background:#f1f5f9; border:1px solid #e2e8f0; border-radius:9999px; padding:.15rem .55rem; margin:.15rem; font-size:.75rem; }
-    .sec-head{ border-bottom:2px solid var(--volt); padding-bottom:.25rem; margin-bottom:.5rem; color:var(--ink); }
-    .timeline-dot{ position:absolute; left:-1.05rem; top:.35rem; width:.6rem; height:.6rem; border-radius:9999px; background:var(--volt); }
-    h1,h2,h3{ line-height:1.2 }
-    h2{ font-size:1.05rem }
-    .tight p, .tight li{ margin:.15rem 0 }
-    .tight ul{ margin:.25rem 0 0 .95rem }
-    @page{ size:A4; margin:10mm }
+    .accent-bar{ height:5px; background:var(--volt); border-radius:6px; }
+    .skill-pill{ display:inline-block; background:#f1f5f9; border:1px solid #e2e8f0; border-radius:9999px; padding:.1rem .5rem; margin:.1rem; font-size:.7rem; }
+    .sec-head{ border-bottom:2px solid var(--volt); padding-bottom:.15rem; margin-bottom:.35rem; color:var(--ink); }
+    .timeline-dot{ position:absolute; left:-1.05rem; top:.3rem; width:.55rem; height:.55rem; border-radius:9999px; background:var(--volt); }
+    h1,h2,h3{ line-height:1.15 }
+    h2{ font-size:.95rem }
+    .tight p, .tight li{ margin:.08rem 0 }
+    .tight ul{ margin:.15rem 0 0 .9rem }
+    @page{ size:A4; margin:8mm }
     @media print{
       body{ background:#fff }
       .page{ box-shadow:none; width:auto; min-height:auto; padding:0; }
       .no-print{ display:none !important }
       /* scale slightly to guarantee 1 page in Chrome/Edge */
-      html{ zoom:0.9; } /* adjust to 0.88 if you still see a second page */
+      html{ zoom:0.73; } /* adjust lower if you still see a second page */
     }
+    .download-btn{
+      position:fixed; top:16px; right:16px; z-index:50;
+      background:var(--ink); color:#fff; border:none; cursor:pointer;
+      padding:.65rem 1.1rem; border-radius:.6rem; font-weight:700;
+      font-size:.85rem; text-transform:uppercase; letter-spacing:.03em;
+      box-shadow:0 6px 16px rgba(0,0,0,.18); display:flex; align-items:center; gap:.5rem;
+      transition:background .2s ease;
+    }
+    .download-btn:hover{ background:var(--volt); color:var(--ink); }
   </style>
 </head>
 <body class="p-4 md:p-8 print:p-0">
+
+  <!-- Download button (hidden when printing) -->
+  <button class="download-btn no-print" onclick="window.print()">
+    <i data-feather="download" class="w-4 h-4"></i> Download PDF
+  </button>
 
   <!-- ONE PAGE WRAPPER START -->
   <main class="page">
 
     <!-- Header -->
-    <section class="header-gradient text-white rounded-lg mb-4 p-5">
+    <section class="header-gradient text-white rounded-lg mb-3 p-4">
       <div class="flex justify-between items-start">
         <div class="mr-4">
-          <h1 class="font-display text-3xl font-bold">Isaiah Latta</h1>
-          <p class="text-lg opacity-95 -mt-1" style="color:var(--volt)">Lineman Apprentice</p>
-          <p class="text-sm mt-1 opacity-90">
-            <i data-feather="globe" class="inline w-4 h-4 mr-1"></i>
+          <h1 class="font-display text-2xl font-bold">Isaiah Latta</h1>
+          <p class="text-base opacity-95 -mt-1" style="color:var(--volt)">Lineman Apprentice</p>
+          <p class="text-xs mt-1 opacity-90">
+            <i data-feather="globe" class="inline w-3.5 h-3.5 mr-1"></i>
             <a class="hover:underline text-white" target="_blank" href="https://isaiahlattaresume.com">isaiahlattaresume.com</a>
           </p>
         </div>
-        <div class="text-right text-sm leading-5">
-          <p class="flex items-center justify-end"><i data-feather="phone" class="w-4 h-4 mr-2"></i> (949) 547-7464</p>
-          <p class="flex items-center justify-end"><i data-feather="mail" class="w-4 h-4 mr-2"></i> Isaiahlatta@hotmail.com</p>
-          <p class="flex items-center justify-end"><i data-feather="map-pin" class="w-4 h-4 mr-2"></i> San Clemente, CA</p>
+        <div class="text-right text-xs leading-5">
+          <p class="flex items-center justify-end"><i data-feather="phone" class="w-3.5 h-3.5 mr-2"></i> (949) 547-7464</p>
+          <p class="flex items-center justify-end"><i data-feather="mail" class="w-3.5 h-3.5 mr-2"></i> Isaiahlatta@hotmail.com</p>
+          <p class="flex items-center justify-end"><i data-feather="map-pin" class="w-3.5 h-3.5 mr-2"></i> San Clemente, CA</p>
         </div>
       </div>
-      <div class="accent-bar mt-4"></div>
+      <div class="accent-bar mt-2"></div>
     </section>
 
     <!-- Summary -->
-    <section class="mb-3 tight">
+    <section class="mb-2 tight">
       <h2 class="font-display font-bold sec-head">Professional Summary</h2>
-      <p class="text-gray-800 text-[0.95rem]">
+      <p class="text-gray-800 text-[0.85rem]">
         Graduate of American Lineman College with Class A CDL (tanker & triples/doubles) and OSHA-10. Currently a
         <strong>Groundman with Christenson Electric</strong> in McKenzie Bridge, OR, working 5/10s on construction of a large load bank facility.
-        Previously a flatbed driver for Heavy AV and a Groundman at Crux Subsurfacing (Sep 2025–Jan 2026) running 7/12s on geotechnical core-sample drilling.
+        Previously a flatbed driver for Heavy AV and a Groundman at Crux Subsurfacing running 7/12s on geotechnical core-sample drilling.
         Five years of professional stagehand/rigging experience and a proven safety-first, team-focused work ethic. <strong>Actively pursuing a full lineman apprenticeship.</strong>
       </p>
     </section>
 
     <!-- Skills -->
-    <section class="mb-3">
+    <section class="mb-2">
       <h2 class="font-display font-bold sec-head">Key Skills</h2>
       <div class="flex flex-wrap text-gray-900">
         <span class="skill-pill">Class A CDL (Tanker & Triples/Doubles)</span>
@@ -89,79 +103,72 @@
     </section>
 
     <!-- Experience -->
-    <section class="mb-3">
+    <section class="mb-2">
       <h2 class="font-display font-bold sec-head">Professional Experience</h2>
 
-      <div class="relative pl-5 mb-2 tight">
+      <div class="relative pl-5 mb-1.5 tight">
         <div class="timeline-dot"></div>
-        <h3 class="font-display font-bold">Groundman — Christenson Electric</h3>
-        <p class="text-gray-600 text-sm">McKenzie Bridge, OR · Sep 2026 – Present</p>
-        <ul class="list-disc text-[0.95rem]">
-          <li>Excavation and backfilling for a large load bank facility built to absorb excess power from a nearby hydroelectric plant; working 5/10s.</li>
-          <li>Placed and leveled 9" gravel lifts up to 2.6 ft; cad-welded grounds to underground fence posts; vibrated concrete.</li>
-          <li>Operated skid steer, mini excavator, and heavy excavator; hauled water via tanker truck (Class A CDL, Tank Vehicle endorsement).</li>
+        <h3 class="font-display font-bold text-[0.95rem]">Groundman — Christenson Electric</h3>
+        <p class="text-gray-600 text-xs">McKenzie Bridge, OR · Sep 2026 – Present</p>
+        <ul class="list-disc text-[0.82rem]">
+          <li>Excavation, backfilling, and 9" gravel lifts (up to 2.6 ft) for a large load bank facility absorbing excess power from a nearby hydro plant; working 5/10s.</li>
+          <li>Cad-welded grounds to underground fence posts, vibrated concrete, and operated skid steer, mini excavator, and heavy excavator.</li>
+          <li>Hauled water via tanker truck (Class A CDL, Tank Vehicle endorsement).</li>
         </ul>
       </div>
 
-      <div class="relative pl-5 mb-2 tight">
+      <div class="relative pl-5 mb-1.5 tight">
         <div class="timeline-dot"></div>
-        <h3 class="font-display font-bold">Flatbed Driver — Heavy AV</h3>
-        <p class="text-gray-600 text-sm">Jan 2026 – Sep 2026</p>
-        <ul class="list-disc text-[0.95rem]">
-          <li>Ran a Class A flatbed for a live-event production company — delivered and picked up fences, decks, trusses, and stage-build gear.</li>
-          <li>Daily load securement and DOT compliance; tight-window coordination with build crews.</li>
+        <h3 class="font-display font-bold text-[0.95rem]">Flatbed Driver — Heavy AV</h3>
+        <p class="text-gray-600 text-xs">Jan 2026 – Sep 2026</p>
+        <ul class="list-disc text-[0.82rem]">
+          <li>Ran a Class A flatbed hauling fences, decks, trusses, and stage-build gear; daily load securement and DOT compliance.</li>
         </ul>
       </div>
 
-      <div class="relative pl-5 mb-2 tight">
+      <div class="relative pl-5 mb-1.5 tight">
         <div class="timeline-dot"></div>
-        <h3 class="font-display font-bold">Groundman — Crux Subsurfacing</h3>
-        <p class="text-gray-600 text-sm">Crescent City, CA · Sep 2025 – Jan 2026</p>
-        <ul class="list-disc text-[0.95rem]">
-          <li>Worked 7/12s (84 hrs/week) around heavy drilling machinery in demanding field conditions.</li>
-          <li>Maintained safe work zones and coordinated with crew on production and safety targets.</li>
+        <h3 class="font-display font-bold text-[0.95rem]">Groundman — Crux Subsurfacing</h3>
+        <p class="text-gray-600 text-xs">Crescent City, CA · Sep 2025 – Jan 2026</p>
+        <ul class="list-disc text-[0.82rem]">
+          <li>Worked 7/12s (84 hrs/week) around heavy drilling machinery; maintained safe work zones and hit production targets.</li>
         </ul>
       </div>
 
-      <div class="relative pl-5 mb-2 tight">
+      <div class="relative pl-5 tight">
         <div class="timeline-dot"></div>
-        <h3 class="font-display font-bold">Professional Stagehand / Rigger — Heavy AV</h3>
-        <p class="text-gray-600 text-sm">2020 – 2025</p>
-        <ul class="list-disc text-[0.95rem]">
-          <li>Light rigging and 60+ ft work at height; forklifts & lifts for large productions; zero recordables.</li>
-          <li>Coordinated builds with crews of 5–20 under tight deadlines and trained new crew on safety.</li>
+        <h3 class="font-display font-bold text-[0.95rem]">Professional Stagehand / Rigger — Heavy AV</h3>
+        <p class="text-gray-600 text-xs">2020 – 2025</p>
+        <ul class="list-disc text-[0.82rem]">
+          <li>Light rigging and 60+ ft work at height; coordinated builds with crews of 5–20 under tight deadlines.</li>
         </ul>
       </div>
     </section>
 
     <!-- Education & Certifications -->
-    <section class="mb-3">
+    <section class="mb-2">
       <h2 class="font-display font-bold sec-head">Education & Certifications</h2>
 
-      <div class="relative pl-5 mb-2 tight">
+      <div class="relative pl-5 mb-1.5 tight">
         <div class="timeline-dot"></div>
-        <h3 class="font-display font-bold">American Lineman College — Graduate</h3>
-        <p class="text-gray-600 text-sm">Bakersfield, CA · 2025</p>
-        <p class="text-[0.95rem]">Pole climbing, transformer installation, underground systems, hot-stick basics, and safety protocols.</p>
+        <h3 class="font-display font-bold text-[0.95rem]">American Lineman College — Graduate</h3>
+        <p class="text-gray-600 text-xs">Bakersfield, CA · 2025</p>
+        <p class="text-[0.82rem]">Pole climbing, transformer installation, underground systems, hot-stick basics, and safety protocols.</p>
       </div>
 
       <div class="relative pl-5 tight">
         <div class="timeline-dot"></div>
-        <h3 class="font-display font-bold">Licenses & Certs</h3>
-        <ul class="list-disc text-[0.95rem]">
-          <li>Class A CDL (Tanker & Triples/Doubles)</li>
-          <li>OSHA-10 Construction Safety</li>
-          <li>Flagger Certification</li>
-          <li>First Aid & CPR</li>
-          <li>Climbing Certification</li>
+        <h3 class="font-display font-bold text-[0.95rem]">Licenses & Certs</h3>
+        <ul class="list-disc text-[0.82rem]">
+          <li>Class A CDL (Tanker & Triples/Doubles) · OSHA-10 · Flagger Certification · First Aid & CPR · Climbing Certification</li>
         </ul>
       </div>
     </section>
 
     <!-- Why Hire Me -->
-    <section class="mb-1 tight">
+    <section class="tight">
       <h2 class="font-display font-bold sec-head">Why Hire Me?</h2>
-      <ul class="list-disc ml-5 text-[0.95rem]">
+      <ul class="list-disc ml-5 text-[0.82rem]">
         <li>Formal lineman training + 5 years rigging = fast ramp-up & safe at-height work.</li>
         <li>Class A CDL in daily use — ready to drive and deploy equipment on day one.</li>
         <li>OSHA-10, First Aid/CPR, Flagger; safety-first mindset proven on site.</li>
